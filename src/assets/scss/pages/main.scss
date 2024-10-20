@@ -1,52 +1,46 @@
 @use '../global' as *;
 
-.main_visual_swiper {
-  img {
-    aspect-ratio: 80/21;
-    min-height: 360px;
-    width: 100%;
+.info_para {
+
+
+  .info_title {
+    font: $text-h5-700;
+  }
+
+  .info_desc {
+    font: $text-p16-500;
+    padding-top: 16px;
   }
 }
 
-.main_sub_swiper {
-  img {
-    aspect-ratio: 160/23;
-    min-height: 180px;
-    width: 100%;
+.about_section {
+  .info_box {
+    display: flex;
+    align-items: center;
+    gap: 32px;
   }
-}
 
-.main_prod_list {
-  padding-top: 64px;
-  padding-bottom: 64px;
-
-
-  &.credit {
-    background-color: $blue-10;
+  .profile_img {
+    border-radius: 50em;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
 
 
+    img {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
 
 @include tablet {
-  .option_prod {
-    padding-bottom: 24px;
-  }
-  .main_prod_list {
-    padding-top: 40px;
-    padding-bottom: 40px;
 
-    &.credit {
-
-    }
-  }
 }
 
 @include xs-tablet {
-  .main_prod_list {
-    &.credit {
 
-    }
-  }
 }
