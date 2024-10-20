@@ -36,9 +36,6 @@
   .warning_text {
     margin-bottom: 40px;
 
-    .warning_icon {
-      @include imgIcon(48px, $icon-g70-warning)
-    }
 
     .title {
       font: $text-h3-400;
@@ -136,7 +133,7 @@
 
     &:after {
       rotate: 180deg;
-      @include combIcon(24px, $icon-Rblack-arrow);
+
     }
 
     &.swiper-button-disabled {
@@ -145,7 +142,7 @@
 
       &:after {
         rotate: 0deg;
-        @include combIcon(24px, $icon-Lg40-arrow)
+
       }
     }
   }
@@ -156,7 +153,7 @@
 
     &:after {
       rotate: 0deg;
-      @include combIcon(24px, $icon-Rblack-arrow)
+
     }
 
     &.swiper-button-disabled {
@@ -165,7 +162,7 @@
 
       &:after {
         rotate: 180deg;
-        @include combIcon(24px, $icon-Lg40-arrow)
+
       }
     }
   }

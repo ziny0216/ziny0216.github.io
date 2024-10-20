@@ -101,7 +101,7 @@ textarea {
 
     &:after {
       transition: all 0.3s ease-in-out;
-      @include combIcon(20px, $icon-DBlack-arrow)
+
     }
   }
 
@@ -200,7 +200,7 @@ textarea {
       justify-content: space-between;
 
       &:after {
-        @include combIcon(24px, $icon-Dg40-arrow)
+
       }
     }
 
@@ -237,7 +237,6 @@ textarea {
       width: 24px;
       height: 24px;
       flex: 0 0 24px;
-      background: url($icon-check-off) no-repeat center center;
       background-size: contain;
       vertical-align: middle;
       margin-right: 4px;
@@ -247,7 +246,7 @@ textarea {
 
   input[type="checkbox"]:checked + label:before {
     content: "";
-    background: url($icon-check-on) no-repeat center center;
+
     background-size: contain;
   }
 }
@@ -278,7 +277,7 @@ textarea {
       display: block;
       width: 24px;
       height: 24px;
-      background: url($icon-radio-off) no-repeat center center;
+
       background-size: contain;
       vertical-align: middle;
       margin-right: 4px;
@@ -288,7 +287,6 @@ textarea {
 
   input[type="radio"]:checked + label:before {
     content: "";
-    background: url($icon-radio-on) no-repeat center center;
     background-size: contain;
   }
 }

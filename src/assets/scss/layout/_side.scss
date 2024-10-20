@@ -25,20 +25,7 @@
     text-decoration: none;
     color: $black;
     font: $text-body13-400;
-    $floating-navi: (
-            cart:$icon-black-cart,
-            info:$icon-black-document,
-            event:$icon-black-event,
-            notice:$icon-black-notice,
-            supporter:$icon-black-receipt,
-            inquiry:$icon-black-center,
-    );
 
-    @each $floating, $icon in $floating-navi {
-      .#{$floating}_icon {
-        @include imgIcon(20px, #{$icon});
-      }
-    }
   }
 }
 
@@ -50,21 +37,6 @@
   margin-top: 16px;
   gap: 4px;
 
-  $toolbar-navi: (
-          insta:$icon-toolbar-insta,
-          kakao:$icon-toolbar-kakao,
-          youtube:$icon-toolbar-youtube,
-          cart:$icon-toolbar-cart,
-          top:$icon-toolbar-top,
-  );
-
-  @each $toolbar, $icon in $toolbar-navi {
-    .#{$toolbar}_icon {
-      border-radius: 50em;
-      overflow: hidden;
-      @include imgIcon(40px, #{$icon});
-    }
-  }
 }
 
 
@@ -226,19 +198,7 @@
 
   }
 
-  $side-navi: (
-          comm:$side-comm,
-          about:$side-about,
-          mypage:$side-mypage,
-          cart:$side-cart,
-  );
 
-  @each $side, $icon in $side-navi {
-    .#{$side}_icon {
-
-      @include imgIcon(20px, #{$icon});
-    }
-  }
 }
 
 /*----------------------------- 반응형 ----------------------------*/
