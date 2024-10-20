@@ -1,0 +1,35 @@
+@use '../global' as *;
+
+.layout_footer {
+  background-color: $black;
+  color: $gray-60;
+  font: $text-body12-400;
+
+  .info_list {
+    display: flex;
+    row-gap: 6px;
+  }
+
+  .footer_inner {
+    padding-top: 40px;
+    padding-bottom: 48px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 70px;
+  }
+
+
+}
+
+
+@include tablet {
+  .layout_footer {
+    .footer_inner {
+      padding-left: 24px;
+      padding-right: 24px;
+      gap: 32px;
+    }
+
+  }
+}

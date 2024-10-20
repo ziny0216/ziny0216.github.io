@@ -1,0 +1,14 @@
+@use 'scss-reset/reset';
+
+@forward 'layout/base';
+@forward 'layout/header';
+@forward 'layout/footer';
+@forward 'layout/side';
+@forward 'components/typography';
+@forward 'components/modal';
+@forward 'components/loading';
+@forward 'components/box';
+@forward 'components/button';
+@forward 'components/input';
+
+

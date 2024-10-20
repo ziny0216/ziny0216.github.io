@@ -1,0 +1,461 @@
+@use '../global' as *;
+
+/* 회원정보 수정 */
+.submit_box {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  .default_btn {
+    max-width: 228px;
+  }
+}
+
+.btm_btn_box {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+
+  .default_btn {
+    &:last-child:first-child {
+      margin-left: auto;
+    }
+
+    flex: 0 0 112px;
+
+  }
+}
+
+.default_info_table {
+
+  .form_info {
+    &:deep {
+      .search_addr {
+        max-width: 695px;
+      }
+
+      .btn_group {
+        max-width: 419px;
+      }
+    }
+  }
+}
+
+.input_list {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  max-width: 574px;
+  width: 100%;
+
+  .terms_btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    align-self: center;
+  }
+}
+
+.change_password {
+  .re_password {
+    margin-top: 16px;
+
+  }
+
+  .btn_group {
+    margin-top: 8px;
+  }
+}
+
+/* 포인트 */
+.text_filter {
+  display: flex;
+  align-self: center;
+  @include groupLine(1px, 12px, $gray-30, 0);
+
+  .group_item {
+    cursor: pointer;
+
+    span {
+      color: $gray-70;
+      font: $text-body14-400;
+      padding: 0 8px;
+    }
+
+    &.active {
+      span {
+        color: $black;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+    }
+  }
+}
+
+.point_list {
+  .board_box {
+
+  }
+
+  .point_value {
+
+    align-self: flex-end;;
+
+    .point {
+      font: $text-body12-500;
+      color: $orange-20;
+
+      &.minus {
+        color: $gray-70;
+      }
+    }
+  }
+}
+
+.bottom_info_box {
+  margin-bottom: 32px;
+
+  h6 {
+    font: $text-body14-400;
+  }
+
+  .dash_list {
+    padding-top: 8px;
+  }
+}
+
+
+.search_date_box {
+  border: 1px solid $gray-30;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .period_btn {
+    display: flex;
+    align-items: center;
+
+    .default_btn {
+      max-width: 72px;
+      font-size: 11px;
+      padding: 0;
+
+      &:not(:last-child) {
+        border-right: none;
+      }
+    }
+  }
+
+  .select_date {
+    flex-wrap: wrap;
+    max-width: 602px;
+    width: 100%;
+
+    .date_picker {
+      flex: 1 1 264px;
+
+    }
+
+    .default_btn {
+      flex: 1 1 58px;
+    }
+  }
+}
+
+.my_table {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.order_detail_form {
+  .user_memo {
+    border: none;
+    padding: 0 24px;
+  }
+
+  .payment_info {
+    .tit {
+      flex: 0 0 50px;
+    }
+  }
+
+  &:deep {
+    .manage_list {
+      .manage_con {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  .default_info_table {
+    &.vertical {
+      display: flex;
+      flex-wrap: wrap;
+
+      .info_item {
+        flex: 50%;
+
+        &:nth-of-type(2n) {
+          border-left: 1px solid $gray-30;
+        }
+      }
+    }
+
+
+    .info_item {
+      min-height: 53px;
+    }
+
+    .price {
+      font: $text-p16-400;
+    }
+  }
+}
+
+.reason_box {
+  border-bottom: 1px solid $gray-30;
+}
+
+/*예치금 */
+.deposit_info_box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-direction: column;
+
+  .deposit_price {
+    font: $text-body13-400;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .price {
+      display: flex;
+      align-items: center;
+      font: $text-h5-400;
+    }
+
+    i {
+      font: $text-body13-400;
+    }
+  }
+
+  .default_btn {
+    flex: 0 1 144px
+  }
+}
+
+.deposit_form {
+  .default_input {
+    max-width: 248px;
+  }
+}
+
+.deposit_amount {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .deposit_input {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+}
+
+
+/*  관심 상품 */
+.my_wish_list {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/*----------------------------- 반응형 ----------------------------*/
+
+@include tablet {
+  .my_container {
+    .point_list {
+      .board_item {
+        flex-direction: row;
+      }
+
+      .board_box {
+        order: 1;
+      }
+    }
+  }
+  .search_date_box {
+    padding: 16px;
+    width: 100%;
+
+    .select_date {
+      max-width: 100%;
+    }
+
+    .period_btn {
+      .default_btn {
+        max-width: 100%;
+        flex: 1;
+      }
+    }
+
+    &:deep {
+      .date_picker {
+        width: 100%;
+      }
+
+
+    }
+  }
+}
+
+@include sm-tablet {
+  .my_table {
+
+    gap: 32px;
+  }
+  .order_detail_form {
+    .user_memo {
+
+      padding: 0 8px;
+    }
+
+    .default_info_table {
+      padding: 0;
+
+      &.vertical {
+        .info_item {
+
+
+          flex: 100%;
+
+          &:nth-of-type(2n) {
+            border-left: none;
+          }
+        }
+      }
+
+      .info_item {
+        padding: 16px 0;
+        border-bottom: 1px solid $gray-30;
+
+        flex-wrap: nowrap;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .label_start {
+          align-self: flex-start;
+        }
+
+        .label {
+
+          flex: 0 0 92px;
+        }
+
+
+        .form_info {
+          font: $text-body13-400;
+        }
+      }
+    }
+  }
+  .input_list {
+    max-width: 100%;
+    flex-wrap: wrap;
+
+    .terms_btn {
+      flex-wrap: wrap;
+      row-gap: 2px;
+      column-gap: 4px;
+      padding-top: 2px;
+    }
+
+    .default_chk_box {
+      &:first-child {
+        width: 100%;
+
+        label {
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+  .default_info_table {
+    .change_box {
+      margin-top: 8px;
+    }
+
+    .border_item {
+      padding: 16px 0;
+      border-bottom: 1px solid $gray-30;
+
+      .label {
+        flex-basis: 92px;
+      }
+
+      .form_info {
+        font-size: 13px;
+      }
+    }
+
+    .form_info {
+      &:deep {
+        .search_addr {
+          max-width: 100%;
+        }
+
+        .btn_group {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+  .deposit_form {
+    .default_input {
+      max-width: 100%;
+    }
+  }
+  .deposit_amount {
+    .deposit_input {
+      flex-wrap: wrap;
+      gap: 12px;
+
+      p {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@include xs-tablet {
+
+
+  .btm_btn_box {
+    .default_btn {
+      font: $text-body13-400;
+      border-radius: 2px;
+      line-height: 38px;
+    }
+  }
+  .submit_box {
+    .default_btn {
+      border-radius: 2px;
+      font: $text-body14-400;
+      line-height: 46px;
+      max-width: 160px;
+    }
+  }
+}
+
+
+

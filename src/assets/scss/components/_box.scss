@@ -1,0 +1,438 @@
+@use '../global' as *;
+
+
+.border_box {
+  border-radius: 8px;
+  border: 1px solid $gray-30;
+}
+
+@keyframes checkmark-appear {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.checkmark {
+  animation: checkmark-appear 1.2s ease forwards;
+}
+
+/* not found */
+.not_found_section {
+  display: grid;
+  place-items: center;
+  height: calc(100vh - 91px);
+
+  .inner {
+    max-width: 550px;
+    text-align: center;
+
+  }
+
+  .warning_text {
+    margin-bottom: 40px;
+
+    .warning_icon {
+      @include imgIcon(48px, $icon-g70-warning)
+    }
+
+    .title {
+      font: $text-h3-400;
+    }
+
+    .para {
+      color: $gray-90;
+      font: $text-body14-400;
+    }
+  }
+
+
+  .warning_btn {
+    display: flex;
+    justify-content: center;
+
+    .default_btn {
+      flex: 0 0 auto;
+    }
+  }
+
+}
+
+
+.custom_scrollbar {
+  &::-webkit-scrollbar {
+    display: block;
+    width: 12px; /* 세로축 스크롤바 폭 너비 */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #7a8699; /* 스크롤바 막대 색상 */
+    border: 2px solid #fff; /* 스크롤바 막대 테두리 설정  */
+    border-radius: 12px 12px 12px 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #fff; /* 스크롤바 뒷 배경 색상 */
+  }
+
+  word-wrap: break-word;
+}
+
+.radius-50 {
+  border-radius: 50em;
+  overflow: hidden;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.resp_container {
+  display: grid;
+  row-gap: 16px;
+  column-gap: 16px;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* 스와이퍼  */
+
+.swiper-pagination {
+  &:not(.banner .swiper-pagination) {
+    position: unset !important;
+    margin-top: 16px;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+
+  .swiper-pagination-bullet {
+    margin: 0;
+    width: 8px;
+    height: 8px;
+    background-color: $gray-3070;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    transition: width 0.3s, background-color 0.3s;
+
+    &-active {
+      background-color: $gray-8070;
+      width: 30px;
+      border-radius: 50em;
+    }
+  }
+}
+
+.swiper-button {
+  &-prev {
+    width: 40px !important;
+    left: 0 !important;
+
+    &:after {
+      rotate: 180deg;
+      @include combIcon(24px, $icon-Rblack-arrow);
+    }
+
+    &.swiper-button-disabled {
+      opacity: 1 !important;
+
+
+      &:after {
+        rotate: 0deg;
+        @include combIcon(24px, $icon-Lg40-arrow)
+      }
+    }
+  }
+
+  &-next {
+    width: 40px !important;
+    right: 0 !important;
+
+    &:after {
+      rotate: 0deg;
+      @include combIcon(24px, $icon-Rblack-arrow)
+    }
+
+    &.swiper-button-disabled {
+      opacity: 1 !important;
+
+
+      &:after {
+        rotate: 180deg;
+        @include combIcon(24px, $icon-Lg40-arrow)
+      }
+    }
+  }
+}
+
+.dash_list {
+  padding-top: 12px;
+
+  &.dot {
+    > span, > p {
+      color: $black;
+      font: $text-body13-400;
+      gap: 4px;
+
+      &:before {
+        content: '';
+        width: 3px;
+        height: 3px;
+        flex: 0 0 3px;
+        border-radius: 50em;
+        display: block;
+        background-color: $black;
+        margin-top: 7px;
+        margin-right: 2px;
+      }
+    }
+  }
+
+  > span, > p {
+    padding: 0 4px;
+    font: $text-body12-400;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    color: $gray-70;
+
+    &:before {
+      content: '-';
+      display: block;
+    }
+  }
+}
+
+
+/*----------------------------- 반응형 ----------------------------*/
+
+@include tablet {
+  .special_phrase {
+    font: $text-caption-400;
+    line-height: 20px;
+  }
+
+
+  .not_found_section {
+    .warning_text {
+      .title {
+        font: $text-p18-400;
+      }
+    }
+  }
+  .option_title {
+    gap: 4px;
+
+    h5 {
+      font: $text-p16-400
+
+    }
+  }
+  .section_title {
+    font: $text-p18-500;
+    margin-bottom: 16px;
+
+    &.sub_section {
+      font: $text-p16-400;
+
+    }
+
+
+  }
+
+  .count {
+    font: $text-body12-400;
+  }
+  .default_prod {
+    .badge_list {
+      bottom: 4px;
+
+      .badge {
+        font: $text-tiny2-400
+      }
+    }
+
+    .prod_info {
+      padding: 10px 2px;
+
+      .prod_type {
+        font: $text-tiny2-400;
+      }
+
+
+      .prod_price {
+        padding: 8px 0 0 0;
+        gap: 4px;
+        flex-direction: column;
+        text-align: center;
+
+
+        .day {
+          font: $text-body14-400;
+          width: auto;
+
+          .consumer_price {
+            font: $text-caption-400;
+
+            & + .won {
+              font: $text-tiny2-400
+            }
+
+          }
+
+          .hour {
+            font: $text-tiny2-400
+          }
+        }
+
+        .goods_sale {
+          flex-direction: column;
+          gap: 0;
+
+        }
+      }
+    }
+  }
+
+  .prod_title {
+    min-height: 43px;
+    width: 100%;
+
+    .title {
+      font: $text-body12-400;
+    }
+
+    .sub_title {
+      width: 100%;
+      font: $text-caption-400
+    }
+  }
+  .won {
+    font: $text-tiny1-400;
+  }
+  .resp_container {
+    display: grid;
+    //grid-template-columns: repeat(5, 1fr);
+    row-gap: 12px;
+    column-gap: 12px;
+  }
+  .prod_list {
+    column-gap: 12px;
+    row-gap: 8px;
+  }
+
+  .badge {
+    font: $text-caption-400;
+  }
+  .option_prod {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    gap: 64px;
+  }
+  .credit_list {
+    .credit_item {
+      .name {
+        font: $text-body12-400;
+      }
+    }
+  }
+}
+
+@include sm-tablet {
+  .list_title {
+    h6, .h6 {
+      font: $text-p16-400;
+    }
+  }
+  .resp_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 8px;
+    column-gap: 8px;
+  }
+
+  .default_info_table {
+    .w-half {
+      max-width: 100%;
+    }
+
+    padding-top: 8px;
+
+    &.deposit_table {
+      .deposit_box {
+        max-width: 100%;
+
+      }
+    }
+
+    &.v2 {
+      border-bottom: 1px solid $gray-30;
+      padding-bottom: 8px;
+
+      .info_item {
+        padding: 8px 0;
+        gap: 8px;
+
+        .label {
+          padding: 0;
+
+        }
+
+        .info_detail {
+          padding: 0;
+        }
+      }
+    }
+
+    .info_item:not(.total_order_price) {
+      flex-wrap: wrap;
+
+    }
+
+    .info_item {
+      border: none;
+      min-height: initial;
+
+      > .label {
+        flex: 1 1 100%;
+        padding: 8px 0;
+        font: $text-body12-400;
+      }
+
+      .form_info {
+
+        border-left: none;
+        flex: 1 1 100%;
+
+        .info_detail {
+          max-width: 100%;
+          padding: 0;
+
+          &:last-of-type {
+            &.additional_amount, &.order_amount {
+              text-align: right;
+            }
+          }
+        }
+
+        .order_amount, .additional_amount {
+          padding-bottom: 8px;
+        }
+      }
+    }
+
+
+  }
+}
+
+@include xs-tablet {
+
+
+}
+

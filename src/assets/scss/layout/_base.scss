@@ -1,0 +1,504 @@
+@use '../global' as *;
+
+body {
+  min-height: initial;
+}
+
+section {
+  min-height: 640px;
+
+}
+
+
+.side_inner::-webkit-scrollbar, .modal_wrap::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  font-family: 'Noto Sans KR', sans-serif !important;
+}
+
+section {
+  height: 100%;
+  overflow: auto;
+}
+
+.posi_relative {
+  position: relative;
+}
+
+.inner {
+  position: relative;
+  max-width: 1236px;
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 0 auto;
+}
+
+.inner-top {
+  padding-top: 68px
+}
+
+.inner-x {
+  padding-top: 64px;
+  padding-bottom: 80px;
+}
+
+.inner-x2 {
+  padding-top: 48px;
+  padding-bottom: 80px;
+}
+
+.inner-x0 {
+  padding: 64px 0;
+}
+
+.inner-y0 {
+  padding: 0 16px;
+}
+
+.in_inner {
+  padding: 20px 16px;
+}
+
+#wrapper {
+  //max-width: 1024px;
+  //width: 100%;
+  //margin: 0 auto;
+}
+
+
+.d-flex {
+  display: flex;
+}
+
+.d-inline-block {
+  display: inline-block !important;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+
+.flex-nowrap {
+  flex-wrap: nowrap !important;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.mw-100 {
+  max-width: 100% !important;;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.flex-auto {
+  flex: 0 0 auto
+}
+
+.flex1 {
+  flex: 1
+}
+
+.flex-4 {
+  display: flex;
+  gap: 4px;
+}
+
+.flex-5 {
+  display: flex;
+  gap: 5px;
+}
+
+.flex-8 {
+  display: flex;
+  gap: 8px;
+}
+
+.flex-10 {
+  display: flex;
+  gap: 10px;
+}
+
+.flex-12 {
+  display: flex;
+  gap: 12px;
+}
+
+.flex-16 {
+  display: flex;
+  gap: 16px;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.flex-justify-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-justify-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.flex-justify-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-start {
+  display: flex;
+  align-items: flex-start;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-center-2 {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.flex-center-4 {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.flex-half-4 {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  @include tablet {
+    gap: 2px;
+  }
+}
+
+
+.flex-center-5 {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.flex-center-8 {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.flex-center-10 {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.flex-center-14 {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.flex-center-15 {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.flex-center-16 {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.flex-center-18 {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.flex-center-20 {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.flex-center-24 {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.flex-center-30 {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+
+.flex-2 {
+  display: flex;
+  gap: 2px;
+}
+
+.flex-8 {
+  display: flex;
+  gap: 8px;
+}
+
+.flex-16 {
+  display: flex;
+  gap: 16px;
+}
+
+.flex-18 {
+  display: flex;
+  gap: 18px;
+}
+
+.flex-20 {
+  display: flex;
+  gap: 20px;
+}
+
+.flex-24 {
+  display: flex;
+  gap: 24px;
+}
+
+.flex-30 {
+  display: flex;
+  gap: 30px;
+}
+
+.flex-32 {
+  display: flex;
+  gap: 32px;
+}
+
+.flex-40 {
+  display: flex;
+  gap: 40px;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.m-0 {
+  margin: 0 !important;
+}
+
+.p-0 {
+  padding: 0 !important;
+}
+
+.px-0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.px-4 {
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+}
+
+.py-16 {
+  padding-block: 16px !important;
+
+}
+
+.pl-4 {
+  padding-left: 4px !important;
+}
+
+.pr-4 {
+  padding-right: 4px !important;
+}
+
+.pt-0 {
+  padding-top: 0 !important;
+}
+
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+
+.py-0 {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.py-16 {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+
+.py-18 {
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+}
+
+.pt-24 {
+  padding-top: 24px !important;
+}
+
+
+.pt-48 {
+  padding-top: 48px !important;
+}
+
+/* 애니 메이션 */
+@keyframes fadeInUp2 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 100%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes fadeInDown2 {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, 100%);
+  }
+}
+
+
+.fade-enter-active .modal_content {
+  animation: fadeInUp2 0.5s;
+}
+
+.fade-leave-active .modal_content {
+  animation: fadeInDown2 0.5s forwards;
+}
+
+.fade-enter-active .dimmed {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.fade-leave-active .dimmed {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* 진입 애니메이션 */
+/* 애니메이션 적용 */
+.fade-left-enter-active .side_inner, .fade-left-leave-active .side_inner {
+  transition: transform 0.5s;
+}
+
+.fade-left-enter-from .side_inner, .fade-left-leave-to .side_inner {
+  transform: translateX(-100%);
+}
+
+.fade-left-enter-to .side_inner, .fade-left-leave-from .side_inner {
+  transform: translateX(0);
+}
+
+.slide-fade-enter-to .dimmed, .slide-fade-leave-from .dimmed {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.fade-left-enter-from .dimmed, .fade-left-leave-to .dimmed {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  /*transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);*/
+  transition: all 0.75s ease-out;
+}
+
+.slide-fade-enter-to {
+  position: absolute;
+  right: 0;
+}
+
+.slide-fade-enter-from {
+  position: absolute;
+  right: -100%;
+}
+
+.slide-fade-leave-to {
+  position: absolute;
+  left: -100%;
+}
+
+.slide-fade-leave-from {
+  position: absolute;
+  left: 0;
+}
+
+
+.hide {
+  display: none !important;
+}
+
+.block {
+  display: block !important;
+}
+
+.flex {
+  display: flex !important;
+}
+
+/*----------------------------- 반응형 ----------------------------*/
+// 1280px
+@include tablet {
+  section {
+    min-height: 100%;
+
+  }
+  .tablet_hide {
+    display: none !important;
+  }
+  .tablet_block {
+    display: block !important;
+  }
+  .tablet_flex {
+    display: flex !important;
+  }
+  .inner-x {
+    padding-top: 40px;
+    padding-bottom: 64px;
+  }
+  .inner-x2 {
+    padding-top: 32px;
+    padding-bottom: 64px;
+  }
+
+}

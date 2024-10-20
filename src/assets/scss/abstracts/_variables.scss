@@ -1,0 +1,157 @@
+/* color */
+$white: #fff;
+$white-50: rgba(255, 255, 255, 0.50);
+$black: #000;
+$black-30: rgba(0, 0, 0, 0.30);
+$black-50: rgba(0, 0, 0, 0.50);
+$gray-10: #F8F8F8;
+$gray-20: #F0F0F0;
+$gray-30: #E8E8E8;
+$gray-3070: rgba(221, 221, 221, 0.70);
+
+$gray-40: #CCCCCC;
+$gray-50: #BBBBBB;
+$gray-60: #AAAAAA;
+$gray-70: #999999;
+$gray-80: #777777;
+$gray-8070: rgba(119, 119, 119, 0.70);
+$gray-90: #555555;
+$gray-100: #222222;
+
+$blue-10: #f4f7fc;
+$blue-20: #f0f7ff;
+$blue-30: #e6f7ff;
+$blue-40: #1ea2ed;
+$blue-50: #3968de;
+$blue-5050: rgba(57, 104, 222, 0.50);
+$blue-60: #3758b9;
+$blue-70: #2C4E99;
+$blue-80: #1d3364;
+$blue-8050: rgba(29, 51, 100, 0.50);
+$blue-90: #0F2045;
+
+$orange-10: #FFF3F0;
+$orange-20: #FA4718;
+
+$red-10: #FDCCCC;
+$red-20: #F50000;
+$red-30: #BA0000;
+$red-40: #9D0000;
+
+$border-width: 1px;
+/* text */
+$text-h1-500: 500 40px/150% 'Noto Sans KR';
+$text-h1-400: 400 40px/150% 'Noto Sans KR';
+$text-h2-500: 500 34px/150% 'Noto Sans KR';
+$text-h2-400: 400 34px/150% 'Noto Sans KR';
+$text-h3-500: 500 30px/150% 'Noto Sans KR';
+$text-h3-400: 400 30px/150% 'Noto Sans KR';
+$text-h4-500: 500 26px/150% 'Noto Sans KR';
+$text-h4-400: 400 26px/150% 'Noto Sans KR';
+$text-h5-500: 500 22px/150% 'Noto Sans KR';
+$text-h5-400: 400 22px/150% 'Noto Sans KR';
+$text-p20-500: 500 20px/150% 'Noto Sans KR';
+$text-p20-400: 400 20px/150% 'Noto Sans KR';
+$text-p18-500: 500 18px/150% 'Noto Sans KR';
+$text-p18-400: 400 18px/150% 'Noto Sans KR';
+$text-p16-500: 500 16px/150% 'Noto Sans KR';
+$text-p16-400: 400 16px/150% 'Noto Sans KR';
+$text-p15-500: 500 15px/150% 'Noto Sans KR';
+$text-p15-400: 400 15px/150% 'Noto Sans KR';
+$text-p15-500: 500 15px/150% 'Noto Sans KR';
+$text-p15-400: 400 15px/150% 'Noto Sans KR';
+$text-body14-500: 500 14px/150% 'Noto Sans KR';
+$text-body14-400: 400 14px/150% 'Noto Sans KR';
+$text-body13-500: 500 13px/150% 'Noto Sans KR';
+$text-body13-400: 400 13px/150% 'Noto Sans KR';
+$text-body12-500: 500 12px/150% 'Noto Sans KR';
+$text-body12-400: 400 12px/150% 'Noto Sans KR';
+$text-body11-500: 500 11px/150% 'Noto Sans KR';
+$text-body11-400: 400 11px/150% 'Noto Sans KR';
+$text-caption-500: 500 10px/150% 'Noto Sans KR';
+$text-caption-400: 400 10px/150% 'Noto Sans KR';
+$text-tiny1-500: 500 9px/150% 'Noto Sans KR';
+$text-tiny1-400: 400 9px/150% 'Noto Sans KR';
+$text-tiny2-500: 500 8px/150% 'Noto Sans KR';
+$text-tiny2-400: 400 8px/150% 'Noto Sans KR'; /* icon */
+
+$icon-gray-location: '@/assets/images/icon/icon-gray-location.png';
+$icon-gray-question: '@/assets/images/icon/icon-gray-question.png';
+$icon-gray-delete: '@/assets/images/icon/icon-gray-delete.png';
+$icon-g70-warning: '@/assets/images/icon/icon-g70-warning.png';
+
+$icon-black-search: '@/assets/images/icon/icon-black-search.png';
+$icon-black-lock: '@/assets/images/icon/icon-black-lock.png';
+$icon-black-close: '@/assets/images/icon/icon-black-close.png';
+$icon-black-question: '@/assets/images/icon/icon-black-question.png';
+$icon-black-person: '@/assets/images/icon/icon-black-person.png';
+$icon-black-cart: '@/assets/images/icon/icon-black-cart.png';
+
+$icon-black-document: '@/assets/images/icon/icon-black-document.png';
+$icon-black-pay: '@/assets/images/icon/icon-black-pay.png';
+$icon-black-event: '@/assets/images/icon/icon-black-event.png';
+$icon-black-notice: '@/assets/images/icon/icon-black-notice.png';
+$icon-black-center: '@/assets/images/icon/icon-black-center.png';
+$icon-black-receipt: '@/assets/images/icon/icon-black-receipt.png';
+$icon-black-share: '@/assets/images/icon/icon-black-share.png';
+
+$icon-black-msg: '@/assets/images/icon/icon-black-msg.png';
+$icon-black-fax: '@/assets/images/icon/icon-black-fax.png';
+$icon-black-phone: '@/assets/images/icon/icon-black-phone.png';
+$icon-black-location: '@/assets/images/icon/icon-black-location.png';
+$icon-black-clock: '@/assets/images/icon/icon-black-clock.png';
+$icon-black-calendar: '@/assets/images/icon/icon-black-calendar.png';
+
+$icon-black-reservation: '@/assets/images/icon/icon-black-reservation.png';
+$icon-black-contract: '@/assets/images/icon/icon-black-contract.png';
+$icon-black-daytime: '@/assets/images/icon/icon-black-daytime.png';
+$icon-black-shopping: '@/assets/images/icon/icon-black-shopping.png';
+
+$icon-Rblack-arrow: '@/assets/images/icon/icon-Rblack-arrow.png';
+$icon-black-arrow: '@/assets/images/icon/icon-black-arrow.png';
+$icon-Rgray-arrow: '@/assets/images/icon/icon-Rgray-arrow.png';
+$icon-Rgray-double-arrow: '@/assets/images/icon/icon-Rgray-double-arrow.png';
+$icon-Lg40-arrow: '@/assets/images/icon/icon-Lg40-arrow.png';
+$icon-DBlack-arrow: '@/assets/images/icon/icon-DBlack-arrow.png';
+$icon-Dg80-arrow: '@/assets/images/icon/icon-Dg80-arrow.png';
+$icon-g50-arrow: '@/assets/images/icon/icon-g50-arrow.png';
+
+$icon-Dg40-arrow: '@/assets/images/icon/icon-Dg40-arrow.png';
+$icon-black-check: '@/assets/images/icon/icon-black-check.png';
+$icon-black-hamburger: '@/assets/images/icon/icon-black-hamburger.png';
+$icon-black-plus: '@/assets/images/icon/icon-black-plus.png';
+$icon-black-minus: '@/assets/images/icon/icon-black-minus.png';
+
+$icon-black-camera: '@/assets/images/icon/icon-black-camera.png';
+$icon-black-select: '@/assets/images/icon/icon-black-select.png';
+$icon-black-home: '@/assets/images/icon/icon-black-home.png';
+$icon-black-screen: '@/assets/images/icon/icon-black-screen.png';
+
+$icon-benefit-cinematographer: '@/assets/images/icon/benefits/icon-benefit-cinematographer.png';
+$icon-benefit-producer: '@/assets/images/icon/benefits/icon-benefit-producer.png';
+$icon-benefit-student: '@/assets/images/icon/benefits/icon-benefit-student.png';
+
+$icon-wish-off: '@/assets/images/icon/active/icon-wish-off.png';
+$icon-wish60-off: '@/assets/images/icon/active/icon-wish60-off.png';
+$icon-wish-on: '@/assets/images/icon/active/icon-wish-on.png';
+
+
+$icon-check-on: '@/assets/images/icon/active/icon-check-on.png';
+$icon-check-off: '@/assets/images/icon/active/icon-check-off.png';
+$icon-radio-on: '@/assets/images/icon/active/icon-radio-on.png';
+$icon-radio-off: '@/assets/images/icon/active/icon-radio-off.png';
+$icon-star-on: '@/assets/images/icon/active/icon-star-on.png';
+$icon-star-off: '@/assets/images/icon/active/icon-star-off.png';
+
+
+$icon-toolbar-insta: '@/assets/images/icon/toolbar/icon-toolbar-insta.png';
+$icon-toolbar-youtube: '@/assets/images/icon/toolbar/icon-toolbar-youtube.png';
+$icon-toolbar-kakao: '@/assets/images/icon/toolbar/icon-toolbar-kakao.png';
+$icon-toolbar-cart: '@/assets/images/icon/toolbar/icon-toolbar-cart.png';
+$icon-toolbar-top: '@/assets/images/icon/toolbar/icon-toolbar-top.png';
+
+
+$side-about: '@/assets/images/icon/side/side-about.png';
+$side-cart: '@/assets/images/icon/side/side-cart.png';
+$side-comm: '@/assets/images/icon/side/side-comm.png';
+$side-mypage: '@/assets/images/icon/side/side-mypage.png';

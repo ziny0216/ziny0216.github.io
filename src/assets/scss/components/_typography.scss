@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
+
+
+.color_blue {
+  color: #2E9FFF
+}
+
+.color_yellow {
+  color: #FFCA00
+}
+
+.color_dark {
+  color: #1D262D !important;
+}
+
+.color_white {
+  color: #fff !important
+}
+
+.color_g80 {
+  color: #777 !important
+}
+
+.color_n80 {
+  color: #98A1B0 !important
+}
+
+.color_n400 {
+  color: #505F79 !important
+}
+
+
+.text_none {
+  text-decoration: none;
+  color: inherit;
+}
+
+.text_underline {
+  text-decoration: underline;
+  color: inherit;
+  text-underline-offset: 3px;
+
+}
+
+.text_left {
+  text-align: left;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.ellipsis1 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.ellipsis_clamp {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+@for $i from 2 through 5 {
+  .ellipsis#{$i} {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $i;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+.guide_text {
+  color: #98a1b0;
+  padding-top: 10px;
+  display: block;
+
+  &.red {
+    color: #FA4718;
+    font: 400 12px/150% 'Noto Sans KR', sans-serif;
+    padding-top: 12px;
+
+  }
+
+  &.gray {
+    color: #777;
+    font: 400 14px/150% 'Noto Sans KR', sans-serif;
+    padding-top: 8px;
+
+  }
+
+  &.blue {
+    color: #3968DE;
+    font: 400 12px/150% 'Noto Sans KR', sans-serif;
+  }
+}
+
+.text_small {
+  font: 400 12px/150% 'Noto Sans KR', sans-serif !important;
+}
+
+.fw-500 {
+  font-weight: 500 !important;
+}
+
+.noWrap {
+  white-space: nowrap;
+}
+
+a {
+  color: #3968DE;
+  text-underline-offset: 3px;
+}
+
+.color_black {
+  color: #000 !important;
+}
+
+.g-80 {
+  color: #777 !important;
+}
+
+.g-70 {
+  color: #999 !important;
+}
+
+.red-20 {
+  color: #F50000 !important;
+}
+
+.orange-20 {
+  color: #FA4718 !important;
+}

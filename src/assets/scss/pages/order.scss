@@ -1,0 +1,1188 @@
+@use '../global' as *;
+
+
+/* 주문 상품 리스트 */
+.tot_product {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 16px;
+
+  span {
+    font: $text-p16-400;
+  }
+
+  .quantity {
+    strong {
+      color: $blue-50
+    }
+  }
+
+  .amount {
+    strong {
+      font-weight: 500;
+    }
+  }
+}
+
+.manage_list {
+  position: relative;
+
+  .status_box {
+    display: flex;
+    align-items: center;
+    flex-basis: 400px;
+    flex-wrap: wrap;
+
+    .default_btn {
+      flex: initial;
+    }
+
+    .waybill_number {
+      text-align: center;
+      font: $text-body12-400;
+
+
+    }
+
+    .action_button {
+      align-items: center;
+      display: flex;
+      gap: 12px;
+      flex-direction: column;
+      flex-basis: 200px;
+
+      .purchase_confirm {
+        margin-left: auto;
+      }
+
+      & + .btn_group {
+        flex-basis: 200px;
+      }
+    }
+
+    .delivery_action {
+      display: flex;
+      gap: 4px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .order_prod_list {
+    .order_item {
+      padding: 16px 0;
+      flex-wrap: wrap;
+
+      .prod_container {
+        padding: 0;
+      }
+
+      .total_price {
+        flex: auto;
+      }
+
+      .prod_info {
+        flex-direction: column;
+        flex: auto;
+        padding: 0;
+        gap: 12px;
+        align-items: flex-start;
+
+
+        .detail {
+          width: 100%;
+          display: flex;
+          align-items: flex-start;
+          gap: 12px;
+        }
+
+        .info_box {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 8px;
+        }
+      }
+
+    }
+
+  }
+
+  .manage_con {
+    border-bottom: 1px solid $black;
+  }
+
+  .info_item {
+    font: $text-body14-400;
+    color: $gray-100;
+    padding: 16px 0;
+    @include groupLine(1px, 12px, $gray-30, 8px);
+
+  }
+
+  .info_detail {
+    padding: 16px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+  .summary {
+    color: $black;
+    font: $text-body13-400;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    span {
+      display: inline-block;
+      font: inherit;
+      vertical-align: -1px;
+    }
+  }
+
+  .action_button {
+    flex: 0 0 auto;
+  }
+}
+
+.order_prod_list {
+  &.readonly {
+
+    .order_item {
+      .total_price {
+        flex-basis: auto;
+      }
+
+      .prod_info {
+
+        .info_box {
+          gap: 8px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+
+  .option_count {
+    margin-top: 4px;
+    font: $text-caption-400;
+  }
+
+  &.rent {
+    border-top: 2px solid $black;
+
+    li {
+      &:nth-child(n+2) {
+        border-top: 1px solid black
+      }
+
+      &:last-child {
+        .option_item {
+          border-bottom: 1px solid $gray-30;
+        }
+      }
+    }
+  }
+
+  .order_item {
+
+
+    border-bottom: 1px solid $gray-20;
+    display: flex;
+    align-items: center;
+
+    .default_chk_box {
+      padding: 0 20px;
+      flex: 0 0 64px;
+
+      label:before {
+        margin: 0;
+      }
+    }
+
+    .prod_img {
+      max-width: 76px;
+      aspect-ratio: 1/1;
+      border: 1px solid $gray-20;
+      object-fit: contain;
+    }
+
+    .prod_container {
+      padding: 16px;
+      gap: 12px;
+      display: flex;
+      flex: auto;
+      align-items: center;
+
+    }
+
+    .prod_info {
+
+      flex-direction: row;
+      align-items: center;
+      flex: 1;
+      padding: 0;
+
+      .info_box {
+        display: flex;
+        align-items: center;
+        flex: auto;
+        gap: 16px;
+        align-self: center;
+      }
+
+
+      .prod_title {
+        max-width: 366px;
+        min-height: initial;
+        width: 100%;
+        padding: 0;
+        text-align: left;
+      }
+
+      .price {
+        font: $text-body14-400;
+        padding: 0 20px;
+        flex-basis: 240px;
+      }
+    }
+
+    .total_price {
+      .won {
+        font: $text-caption-400
+      }
+
+      flex-basis: 192px;
+      padding-right: 40px;
+      gap: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .prod_count_box {
+      padding: 0 32px;
+      flex-basis: 222px;
+      display: flex;
+      font: $text-body14-400;
+    }
+  }
+
+  .option_item {
+
+    overflow: hidden;
+    transition: height 0.3s;
+
+    .down_arrow {
+      transition: rotate 0.3s;
+    }
+
+    &.active {
+      .down_arrow {
+        rotate: 180deg;
+      }
+    }
+
+    .order_item {
+      border-bottom: none;
+      background-color: $gray-10;
+
+
+    }
+
+  }
+
+  .order_method {
+    border-bottom: 1px solid $gray-30;
+    padding: 16px 0;
+    text-align: center;
+  }
+}
+
+
+/* 주문 정보 리스트 */
+.order_amount {
+
+  font: $text-body14-500
+}
+
+.additional_amount {
+  color: $gray-70;
+  font: $text-body12-400;
+
+  &.active {
+    color: $orange-20;
+    font: $text-body12-500
+  }
+}
+
+
+.account_form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .account_input {
+    flex: 0 0 248px;
+  }
+
+  .default_input {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+  }
+}
+
+.payment_form {
+  .default_input {
+    flex: 0 0 248px;
+    width: 100%;
+  }
+
+  .default_btn {
+    flex: 0 0 88px;
+  }
+
+  .rest_price {
+    font: $text-body12-400;
+
+    span {
+      color: $gray-80
+    }
+  }
+}
+
+
+.receipt_form {
+  .default_select {
+    max-width: 192px;
+    width: 100%;
+  }
+
+  input {
+    max-width: 400px;
+  }
+}
+
+
+.deposit_table {
+  padding-bottom: 16px;
+  //border-bottom: 1px solid $gray-30;
+
+  .deposit {
+    font: $text-body14-400;
+
+    strong {
+      font: $text-p16-500;
+    }
+  }
+
+  .guide_text {
+    padding-top: 12px;
+
+    strong {
+      font-weight: 500;
+      color: $orange-20;
+    }
+  }
+
+  .account_box {
+    padding: 16px;
+    margin-top: 16px;
+    background-color: $gray-10;
+    font: $text-body12-400;
+  }
+}
+
+.rental_box {
+  display: flex;
+  align-items: stretch;
+  border-radius: 8px;
+  border: 2px solid $gray-100;
+
+  hr {
+    width: 1px;
+    height: 100%;
+    background: $gray-30;
+    margin-left: 40px;
+  }
+
+  .rental_tit {
+    background-color: $gray-100;
+    color: $white;
+    font: $text-h4-400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 280px;
+    width: 100%;
+  }
+
+
+  .rental_con {
+    padding: 30px 48px;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 280px);
+
+    .rental_select {
+      display: flex;
+      height: 100%;
+      flex: 1;
+      gap: 16px;
+
+      .label {
+        font: $text-body12-400;
+        padding-top: 11px;
+      }
+
+      .select_box {
+        display: flex;
+        gap: 8px;
+        max-width: 269px;
+        width: 100%;
+
+
+      }
+
+      .select_info {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        flex: 1;
+      }
+
+      .operate_time {
+        font: $text-body12-400;
+        color: $gray-80;
+      }
+    }
+
+    .rental_result {
+      padding-left: 32px;
+      max-width: 225px;
+      width: 100%;
+
+
+      p {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font: $text-body14-400;
+      }
+    }
+
+  }
+
+
+}
+
+.rental_time_box {
+  border: 1px solid $gray-20;
+  background-color: $gray-10;
+
+  .rental_con {
+    width: 100%;
+
+    .word {
+      font: $text-body13-400;
+      padding-bottom: 13px;
+    }
+
+    .rental_select {
+
+      align-items: flex-end;
+
+      .label {
+        padding-top: 0;
+      }
+
+      .select_box {
+
+        max-width: 100%;
+        flex-wrap: wrap;
+
+
+      }
+
+      .label {
+        width: 100%;
+      }
+
+      &:deep {
+        .date_picker {
+          flex: 1 0 0
+
+        }
+
+        .time_picker {
+          flex: 0 0 164px
+
+        }
+      }
+    }
+  }
+}
+
+.cash_receipts {
+  border-top: 1px solid $gray-30;
+
+
+}
+
+/* 배송지 정보 */
+.addr_table {
+  &:deep {
+    .radio_list {
+      padding: 0;
+    }
+  }
+
+  .addr_radio {
+    .default_btn {
+      flex: 0 0 99px;
+    }
+  }
+
+  .addr_receiver {
+    .default_input {
+      max-width: 452px;
+    }
+  }
+
+  .addr_edit {
+    .info_detail {
+      max-width: 696px;
+      width: 100%;
+    }
+
+    &:deep {
+      .btn_group {
+        max-width: 452px;
+        width: 100%;
+
+        input {
+          width: calc(100% - 119px);
+        }
+      }
+    }
+  }
+}
+
+/* 최종 결제 박스*/
+.order_info_box {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  border: 1px solid $black;
+  border-radius: 8px;
+  padding: 31px 40px;
+
+
+  .order_left {
+    flex: 1 1 auto;
+
+
+    .p_icon {
+      border-radius: 2px;
+
+      flex: 0 0 40px;
+      background-color: $black;
+      font: $text-body12-500;
+      line-height: 40px;
+      text-align: center;
+      color: $white;
+      display: block;
+
+    }
+
+    .point_info {
+      span {
+        font: $text-body14-400;
+        display: block;
+        padding-bottom: 2px;
+
+      }
+    }
+
+    hr {
+      background: $gray-30;
+      margin: 16px 0;
+    }
+
+    .bottom_con {
+      flex-wrap: wrap;
+      display: flex;
+      align-items: center;
+      gap: 88px;
+
+      .time_info {
+
+        text-align: center;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .info_box {
+
+
+        i {
+          font: $text-p18-400;
+        }
+
+        span {
+          display: block;
+
+          &:first-child {
+            padding-bottom: 2px;
+            font: $text-p16-400;
+          }
+
+          &:last-child {
+            color: $gray-80;
+            font: $text-body14-400;
+          }
+        }
+      }
+    }
+  }
+
+  .order_right {
+    flex: 0 0 310px;
+
+    .total_count {
+      font: $text-body14-400;
+    }
+
+    .total_amount {
+      text-align: right;
+
+      .price_box {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+
+      .label {
+        font: $text-p18-400;
+        padding-bottom: 5px;
+      }
+
+      .price {
+        color: $orange-20;
+        font: $text-h3-500
+      }
+
+      .won {
+        font: $text-p16-400
+      }
+    }
+  }
+}
+
+
+/* 견적서 */
+.quote_table {
+  &.order {
+    .info_item {
+      &:nth-of-type(n+3) {
+        flex: 1 1 100%;
+        border-left: none;
+      }
+    }
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+
+  .info_item {
+    flex: 1 0 500px;
+
+    &:nth-of-type(2n) {
+      border-left: 1px solid $gray-30;
+    }
+  }
+
+  .date_picker {
+    flex: 1;
+  }
+
+  .form_info {
+    padding: 16px 40px;
+  }
+
+  .date_box {
+    flex: 0 0 472px;
+    flex-wrap: wrap;
+
+    &:deep {
+      .date_picker {
+        flex: 0 1 298px
+      }
+
+      .time_picker {
+        flex: 0 1 164px
+      }
+    }
+  }
+
+
+}
+
+
+.method_table {
+  .info_detail {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .price {
+    font: $text-body14-400;
+  }
+
+  .default_input, .date_picker {
+    flex: 0 0 248px;
+  }
+}
+
+/*----------------------------- 반응형 ----------------------------*/
+
+@include tablet {
+
+  .rental_box {
+    display: block;
+
+    hr {
+      width: 100%;
+      height: 1px;
+      margin: 16px 0;
+    }
+
+    .rental_tit {
+      max-width: 100%;
+      justify-content: flex-start;
+      font: $text-p18-500;
+      padding: 16px;
+    }
+
+    .rental_con {
+      padding: 16px;
+      flex-wrap: wrap;
+      width: 100%;
+
+      .rental_select {
+        gap: 16px;
+        flex-wrap: wrap;
+
+        .select_box {
+          flex: 1 0 478px;
+          max-width: 100%;
+        }
+      }
+
+      .rental_result {
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0;
+
+
+        p {
+          font: $text-body12-400;
+
+          &:first-child {
+            &:after {
+              content: '/';
+
+              display: inline-block;
+              padding-right: 4px;
+            }
+          }
+
+          &:last-child {
+            flex: auto;
+          }
+        }
+      }
+    }
+  }
+  .rental_time_box {
+    flex: auto;
+
+    .rental_con {
+      .rental_select {
+        &:deep {
+          .date_picker, .time_picker {
+            flex: 1 1 50%;
+          }
+        }
+
+        .select_box:last-of-type {
+          margin: 0;
+        }
+      }
+
+      .rental_result {
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0;
+
+        p {
+
+          &:first-child {
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+
+}
+
+
+@include sm-tablet {
+
+
+  .manage_list {
+    .info_item {
+      flex-wrap: wrap;
+      row-gap: 8px;
+    }
+
+    .status_box {
+      flex-basis: 100%;
+      position: relative;
+
+      .action_button {
+        align-items: flex-start;
+        flex: initial;
+      }
+
+    }
+
+    &:deep {
+      .btn_group {
+        flex-basis: 100%;
+        align-items: flex-start;
+      }
+
+      .action_button + .btn_group {
+        flex-basis: 200px;
+        position: absolute;
+        bottom: 0;
+        left: 156px;
+      }
+    }
+
+    .info_detail {
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .order_prod_list {
+      .prod_img {
+        order: 2;
+      }
+
+      .order_item {
+        .prod_container {
+          flex-wrap: wrap;
+        }
+
+        .total_price {
+          padding: 0;
+        }
+      }
+    }
+  }
+  .order_prod_list {
+    &.readonly {
+      .order_item {
+        padding: 16px;
+
+        .prod_count_box, .total_price {
+          padding-left: 0px;
+        }
+      }
+    }
+
+
+    .order_item {
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding: 16px 0;
+      gap: 8px;
+
+      .default_chk_box {
+        flex-basis: 24px;
+        padding: 0;
+      }
+
+      .prod_container {
+        position: relative;
+        padding: 0;
+        width: calc(100% - 32px);
+        align-items: flex-start;
+      }
+
+      .prod_info {
+        padding: 0;
+        flex-wrap: wrap;
+
+
+        .info_box {
+
+          gap: 8px;
+          flex-wrap: wrap;
+          align-self: flex-start;
+        }
+
+        .prod_title, .price {
+
+          padding: 0;
+          flex-basis: 100%;
+        }
+      }
+
+      .prod_count_box {
+        text-align: left;
+        padding: 8px 0;
+      }
+
+      .prod_count_box, .total_price {
+
+        flex: 1 1 100%;
+      }
+
+      .total_price {
+        justify-content: space-between;
+        padding: 0;
+
+        .delete_btn {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+
+  .order_method {
+    font: $text-body13-400;
+
+    .order_amount {
+      font: inherit;
+    }
+  }
+  .tot_product {
+    span {
+      font: $text-body14-400;
+    }
+  }
+
+
+  .account_form {
+    flex-wrap: wrap;
+
+    .account_input, .default_input {
+      flex: 1 1 328px
+    }
+  }
+
+
+  .receipt_form {
+    input {
+      max-width: 100%;
+    }
+  }
+  .deposit_table {
+    border-bottom: 1px solid $gray-30;
+
+    .account_box {
+      margin-top: 12px;
+    }
+  }
+
+  .payment_form {
+    flex-wrap: wrap;
+    gap: 8px;
+
+
+    [class*='default_'] {
+      flex: 1 1 100%;
+    }
+  }
+  .discount_coupon, .point, .deposit_con .form_info {
+    position: relative;
+
+    .additional_amount {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      line-height: 24px;
+      padding: 0 !important;
+    }
+
+
+  }
+  .cash_receipts {
+    border-top: 1px solid $gray-30;
+    border-bottom: 1px solid $gray-30;
+    padding: 16px 0;
+    margin: 16px 0 8px 0;
+  }
+
+
+  .order_info_box {
+    gap: 16px;
+    padding: 16px;
+    flex-wrap: wrap;
+
+    .order_left {
+      flex: 0 0 100%;
+
+      .bottom_con {
+        gap: 16px;
+
+        .info_box {
+          text-align: left;
+          gap: 16px;
+
+          span {
+            &:first-child {
+              font: $text-body14-400;
+            }
+
+            &:last-child {
+              font: $text-body12-400;
+            }
+          }
+        }
+      }
+    }
+
+    .order_right {
+      flex: 0 0 100%;
+      border-top: 1px solid $gray-30;
+      padding-top: 16px;
+
+      .total_count {
+        font: $text-body12-400;
+      }
+
+      .total_amount {
+
+        .label {
+          font: $text-body14-400;
+        }
+
+        .price {
+          font: $text-h4-500;
+
+          .won {
+            font: $text-body14-400;
+          }
+        }
+      }
+    }
+  }
+
+  .addr_table {
+    flex-direction: column;
+
+    display: flex;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $gray-30;
+
+    .addr_receiver {
+      .default_input {
+        max-width: 100%;
+      }
+
+
+    }
+
+    .addr_edit {
+      &:deep {
+        .btn_group {
+          max-width: 100%;
+        }
+      }
+
+      .info_detail {
+        max-width: 100%;
+      }
+    }
+  }
+
+
+  .quote_table {
+    gap: 8px;
+
+    .form_info {
+
+      padding: 0;
+    }
+
+    .info_item {
+      border: none !important;
+    }
+
+    .date_box {
+      flex: 100%;
+
+      &:deep {
+        .date_picker, .time_picker {
+          flex: 100%;
+        }
+      }
+    }
+
+    .return_form {
+      .form_info {
+        gap: 8px;
+      }
+    }
+  }
+  .method_table {
+    gap: 8px;
+
+    .total_order_price {
+
+
+      .form_info {
+        flex: 0 0 auto;
+      }
+
+      .price {
+        font: $text-body12-500
+      }
+    }
+
+    .info_detail {
+      gap: 8px;
+    }
+
+    .default_input, .date_picker {
+      flex: 100%;
+    }
+
+  }
+}
+
+
+
+
+
