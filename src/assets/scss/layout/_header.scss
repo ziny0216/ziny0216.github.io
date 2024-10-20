@@ -5,11 +5,48 @@
   width: 100%;
 
   .header_inner {
-    padding-top: 24px;
-    padding-bottom: 18px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: end;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $white;
+
+    .header_navi {
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: end;
+      gap: 32px;
+    }
+
+    .navi_item {
+      color: $gray-40;
+      font: 700 24px/54px 'Noto Sans KR';
+      transition: color 0.3s ease-in-out;
+      position: relative;
+      cursor: pointer;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: $base;
+        z-index: 10;
+        transition: all 0.3s;
+      }
+
+      &:hover, &.active {
+        color: $base;
+
+        &:before {
+          width: 100%;
+        }
+      }
+    }
   }
 
 
@@ -54,7 +91,7 @@
 @include tablet {
   .layout_header {
     .header_inner {
-      flex-direction: column-reverse;
+
       justify-content: center;
       align-items: center;
       padding-top: 0;

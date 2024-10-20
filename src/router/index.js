@@ -4,7 +4,7 @@ const routes = [
   {
     path: '/main',
     name: 'Main',
-    component: () => import('../views/main.vue'),
+    component: () => import('@/views/main/Main.vue'),
   },
 
   {

@@ -1,13 +1,13 @@
 <script setup>
-  import { RouterLink, RouterView } from 'vue-router';
+  import { RouterView } from 'vue-router';
+  import LayoutHeader from '@/components/layout/LayoutHeader.vue';
 </script>
 
 <template>
-  <router-view name="layoutHeader"></router-view>
+  <layout-header></layout-header>
   <router-view v-slot="{ Component }">
     <component :is="Component" />
   </router-view>
-  <router-view name="layoutFooter"></router-view>
 </template>
 
 <style scoped>
