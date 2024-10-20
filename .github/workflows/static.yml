@@ -30,7 +30,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '16'  # 사용하려는 Node.js 버전 설정
+          node-version: '20'  # 사용하려는 Node.js 버전 설정
 
       - name: Install dependencies
         run: yarn install  # 의존성 설치
