@@ -5,7 +5,7 @@ body {
 }
 
 section {
-  min-height: 640px;
+  min-height: 100vh;
 
 }
 
@@ -18,10 +18,6 @@ section {
   font-family: 'Noto Sans KR', sans-serif !important;
 }
 
-section {
-  height: 100%;
-  overflow: auto;
-}
 
 .posi_relative {
   position: relative;
@@ -479,10 +475,7 @@ section {
 /*----------------------------- 반응형 ----------------------------*/
 // 1280px
 @include tablet {
-  section {
-    min-height: 100%;
 
-  }
   .tablet_hide {
     display: none !important;
   }

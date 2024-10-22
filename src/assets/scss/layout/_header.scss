@@ -3,15 +3,16 @@
 
 .layout_header {
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $black;
+  z-index: 100;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 
   .header_inner {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: $white;
 
-    z-index: 100;
 
     .header_navi {
       padding: 16px 0;
@@ -24,7 +25,7 @@
 
     .navi_item {
       color: $gray-40;
-      font: 800 28px/150% 'Noto Sans KR';
+      font: 800 24px/150% 'Noto Sans KR';
       transition: color 0.3s ease-in-out;
       position: relative;
       cursor: pointer;

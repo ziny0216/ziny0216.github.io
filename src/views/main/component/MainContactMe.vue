@@ -2,11 +2,13 @@
   import DefaultSectionTitle from '@/components/common/DefaultSectionTitle.vue';
 </script>
 <template>
-  <section class="contact_section">
+  <section class="contact_section" id="contact">
     <div class="inner inner-top">
       <DefaultSectionTitle title="CONTACT ME" />
-      <div class="info_box">
-        <div class="info_para"></div>
+      <div class="content_wrap">
+        <div class="info_box">
+          <div class="info_para"></div>
+        </div>
       </div>
     </div>
   </section>
