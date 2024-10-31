@@ -10,8 +10,8 @@
   });
 </script>
 <template>
-  <main class="about_section">
-    <div class="inner-top">
+  <main>
+    <div>
       <!--      <MainAboutMe />-->
       <MainCareer />
 

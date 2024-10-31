@@ -1,23 +1,52 @@
 @use '../global' as *;
 
-.info_para {
+section {
+  display: flex;
+  align-items: center;
 
+  .inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  &:deep {
+    .section_title {
+      align-self: flex-start;
+    }
+  }
+
+  .content_wrap {
+    width: calc(100% - 200px);
+  }
+}
+
+.info_para {
+  color: $gray-100;
 
   .info_title {
     font: $text-h5-700;
+  }
+
+  .info_sub_tit {
+    font: $text-p18-500;
   }
 
   .info_desc {
     font: $text-p16-500;
     padding-top: 16px;
   }
+
+  .info_small {
+    font: $text-body14-400;
+    color: $gray-80
+  }
 }
 
 .about_section {
   .info_box {
-    display: flex;
-    align-items: center;
-    gap: 32px;
+
   }
 
   .profile_img {
@@ -34,6 +63,29 @@
       height: 100%;
     }
   }
+}
+
+.project_section {
+  .project_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .project_item {
+    border: 1px solid $gray-30;
+    border-radius: 16px;
+    padding: 16px 16px 50px 16px;
+    position: relative;
+  }
+}
+
+.read_more_btn {
+  font: $text-body12-500;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  color: $black-50;
 }
 
 

@@ -117,13 +117,14 @@ button {
   }
 
   &.light_blue {
+    background-color: $white;
+    border-color: $blue-50;
+    color: $blue-50;
+
     &.sm {
       background-color: $blue-10;
     }
 
-    background-color: $white;
-    border-color: $blue-50;
-    color: $blue-50;
 
     &:active, &:hover {
       background-color: $blue-10;

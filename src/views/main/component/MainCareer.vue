@@ -3,7 +3,7 @@
 </script>
 <template>
   <section class="career_section" id="career">
-    <div class="inner inner-top">
+    <div class="inner">
       <DefaultSectionTitle title="CAREER" />
       <div class="content_wrap">
         <div class="info_box">

@@ -4,13 +4,7 @@
   const handleSection = sectionId => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offsetTop =
-        element.getBoundingClientRect().top + window.scrollY - 68;
-
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth',
-      });
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
   onMounted(async () => {});
