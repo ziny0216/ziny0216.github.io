@@ -69,7 +69,7 @@ section {
   .project_list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    gap: 16px;
   }
 
   .project_item {
@@ -77,8 +77,18 @@ section {
     border-radius: 16px;
     padding: 16px 16px 50px 16px;
     position: relative;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      //transform: translateY(-5px);
+
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+      transform: perspective(600px) rotateX(2deg) rotateY(2deg);
+    }
   }
 }
+
 
 .read_more_btn {
   font: $text-body12-500;

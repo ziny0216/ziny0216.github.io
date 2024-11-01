@@ -1,5 +1,5 @@
 <script setup>
-  import { usePopupStore } from '@/store/common/usePopupStore.js';
+  import { usePopupStore } from '@/stores/usePopupStore.js';
 
   const usePopup = usePopupStore();
   const emits = defineEmits(['close']);

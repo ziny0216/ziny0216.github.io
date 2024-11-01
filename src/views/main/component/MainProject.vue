@@ -1,9 +1,12 @@
 <script setup>
   import DefaultSectionTitle from '@/components/common/DefaultSectionTitle.vue';
   import DefaultTabList from '@/components/common/DefaultTabList.vue';
-  import { computed, onMounted, reactive } from 'vue';
+  import { onMounted, reactive } from 'vue';
   import { allProject } from '@/utiles/PortfolioData.js';
+  import ProjectDetailPopup from '@/components/popup/ProjectDetailPopup.vue';
+  import { usePopupStore } from '@/stores/usePopupStore.js';
 
+  const usePopup = usePopupStore();
   const state = reactive({
     activeTab: 'new',
     tabList: [
@@ -13,6 +16,7 @@
       { name: 'PUB', value: 'pub' },
     ],
     projectList: [],
+    selectedProject: {},
   });
   const handleActiveTab = tab => {
     state.activeTab = tab.value;
@@ -25,6 +29,10 @@
     );
   };
 
+  const handleDetailPopup = project => {
+    state.selectedProject = project;
+    usePopup.setPopupState('isProjectPopup');
+  };
   onMounted(() => {
     filterProjectList();
   });
@@ -41,10 +49,12 @@
             :tab-list="state.tabList"
             @handle-active="handleActiveTab"
           ></DefaultTabList>
-          <transition-group name="shuffle" tag="ul" class="project_list">
+          <ul class="project_list">
             <li
               class="info_para project_item"
-              v-for="project in state.projectList"
+              v-for="(project, idx) in state.projectList"
+              :key="idx"
+              @click="handleDetailPopup(project)"
             >
               <div>
                 <a
@@ -54,15 +64,21 @@
                   >{{ project.name }}</a
                 >
                 <p class="info_small">{{ project.date }}</p>
-                <p class="info_desc" v-html="project.summary"></p>
-                <button type="button" class="read_more_btn">READ MORE</button>
+                <div class="info_desc">
+                  <span class="ellipsis_clamp">
+                    {{ project.summary }}
+                  </span>
+                </div>
+                <span class="read_more_btn">READ MORE</span>
               </div>
             </li>
-          </transition-group>
+          </ul>
         </div>
       </div>
     </div>
   </section>
+
+  <ProjectDetailPopup :project="state.selectedProject" />
 </template>
 
 <style scoped lang="scss">

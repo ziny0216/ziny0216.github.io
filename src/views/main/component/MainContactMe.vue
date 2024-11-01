@@ -6,9 +6,9 @@
     <div class="inner inner-top">
       <DefaultSectionTitle title="CONTACT ME" />
       <div class="content_wrap">
-        <div class="info_box">
-          <div class="info_para"></div>
-        </div>
+        <h3>CONTACT ME</h3>
+        <p>rkfwoa02@gmail.com</p>
+        <p></p>
       </div>
     </div>
   </section>
