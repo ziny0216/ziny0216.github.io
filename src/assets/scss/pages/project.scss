@@ -1,0 +1,87 @@
+@use '../global' as *;
+
+.pj_summary {
+  font: $text-body14-400;
+  margin-bottom: 8px;
+}
+
+.pj_skill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .skill_item {
+    border-radius: 4px;
+    background: #1d3364;
+    color: $white;
+    padding: 0 4px;
+    font: $text-body12-500;
+  }
+}
+
+.pj_desc {
+
+  .title {
+    font: $text-body14-600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &:before {
+      content: '\1F4CC';
+      display: block;
+    }
+  }
+
+  .desc_list {
+    list-style: disc;
+    padding-left: 20px;
+    font: $text-body14-400;
+
+    li {
+      padding-bottom: 4px;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  .pj_swiper {
+    position: relative;
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      max-height: 275px;
+    }
+
+    video, img {
+
+      object-fit: contain;
+    }
+
+
+    .custom-prev, .custom-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .custom-prev {
+      left: 14px;
+    }
+
+    .custom-next {
+      right: 14px;
+    }
+
+    .swiper-button-disabled {
+      opacity: 0.2;
+      pointer-events: none;
+    }
+  }
+
+}

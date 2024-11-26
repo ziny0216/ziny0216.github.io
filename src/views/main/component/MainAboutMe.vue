@@ -2,13 +2,13 @@
   import DefaultSectionTitle from '@/components/common/DefaultSectionTitle.vue';
 </script>
 <template>
-  <section class="about_section" id="about">
+  <section id="about" class="about_section">
     <div class="inner inner-top">
       <DefaultSectionTitle title="ABOUT ME" />
       <div class="content_wrap">
         <div class="info_box">
           <div class="profile_img">
-            <img src="@/assets/images/profile_img.jpg" alt="조여진 이미지 " />
+            <img alt="조여진 이미지 " src="@/assets/images/profile_img.jpg" />
           </div>
           <div class="info_para">
             <h5 class="info_title">
@@ -32,6 +32,6 @@
   </section>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
   @use '@/assets/scss/pages/main';
 </style>

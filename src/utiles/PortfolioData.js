@@ -1,3 +1,11 @@
+import iq_login from '@/assets/video/iq_login.mov';
+import iq_list from '@/assets/video/iq_list.mov';
+import cimemall_main from '@/assets/video/cimemall_main.mov';
+import daypay_cart from '@/assets/video/daypay_cart.mov';
+import daypay_mo from '@/assets/video/daypay_mo.mov';
+import daypay_prod from '@/assets/video/daypay_prod.mov';
+import daypay_date from '@/assets/video/daypay_date.png';
+
 export const allProject = [
   {
     type: ['new', 'react'],
@@ -6,10 +14,28 @@ export const allProject = [
     stack: ['react', 'styled-components', 'Zustand'],
     summary: '어린이 동화책 , 어린이 심리검사 앱',
     description: [
-      '사용하여 헤더 , 뱃지 , 드롭다운, 탭을 styled component 를 사용하여 컴포넌트 생성',
-      '유지보수에 용이하도록 디자인 스타일 가이드 기반 root 구성하여 전역 변수 사용 ',
-      '공지사항,FAQ,검사 리스트,결제 리스트 더미 데이터를 이용하여 UI 작업',
-      '공지사항,FAQ API 연동 및 outlet을 이용하여 중첩라우터 구성',
+      'React, zustand , styled-components 이용',
+      '유지보수에 용이하도록 디자인 스타일 가이드 기반 root 구성하여 전역 변수 사용  ',
+      'axios interceptor 를 통해 토큰 갱신 , 토큰 만료 , 로그인 처리',
+      'styled-components를 이용하여 header , badge , tab 공통 컴포넌트 생성',
+      'zustand를 이용해 유저 정보 저장 및 공통 컴포넌트 tab에 맞춰 api 로 받아온 데이터 name,value 로 변환 사용',
+      'hook 을 사용하여 게시판 리스트 및 무한 스크롤 구현',
+      '네이버, 구글 , 애플 회원 가입 및 로그인 연동 및 hook을 이용하여 공통 함수 처리',
+      'sns 회원가입 및 게시판 리스트(1:1 문의 , FAQ , 공지사항, 결제 내역 , 검사 리스트) , 작성 팝업 (1:1 문의) 구현',
+    ],
+    troubleShooting:
+      '아이큐 비타민  담당 프론트엔드에게 맞춰 ui를 구성하여 중첩 라우팅을 사용하지 않았다. 쿼리스트링의 type을 참조하여  if문을 통해 컴포넌트 렌더링 되도록 작업했다. 내가 다시 투입되어 개발까지 해야했을때 거의 동일한 ui 임에도 중첩 라우팅의 부재로 컴포넌트 마다 무한스크롤 , 탭 클릭시 api 호출 중복 코드가 발생하였다. 중복코드를 제거하기 위해 custom hook에서 type 값을 받아 switch 문으로 api 호출 분기를 태웠고 그 이후 예외처리와 무한스크롤의 공통화했다. 이렇게 만든 custom hook은 리스팅 페이지에 전반적으로 공통 사용 되었다. ',
+    medias: [
+      {
+        src: iq_login,
+        type: 'video',
+        name: 'iq_login',
+      },
+      {
+        src: iq_list,
+        type: 'video',
+        name: 'iq_list',
+      },
     ],
   },
   {
@@ -20,6 +46,15 @@ export const allProject = [
     summary:
       '촬영장비 판매 쇼핑몰(데이페이 자매사이트) - 현재 중단, 데이페이 추가 개발 완료된 이후 진행 예정',
     description: ['데이페이와 동일한 구조로 UI 변경만 진행한 상태'],
+    troubleShooting:
+      '데이페이와 자매사이트로 영상장비 판매 사이트이다.추가되는 기능의 api를 제외하고는  데이페이와 동일한 api 구조를 가기로 백엔드 개발자와 협의하였다. 기존 데이페이의 50% 개발 , 100% ui 를 시네몰에 입혔고 시네몰의 디자인을 입혀야했다. 이미 개발 및 ui 는 만들어져있어 수정하는데 어려움을 겪었고 최대한 기존 데이터 할당을 유지한채로 작업했다. 브랜드와 카테고리는 db 설계가 따로 되어있어 데이터를 따로 받아오는 와중에 카테고리는 3depth 까지 있다. 어쨌든 새로 만드는것 보다 기존의 형태에서 ui 만 바꾸는것이 합리적이고 적절한 선택이었다. 시네몰 작업 이후 데이페이도 시네몰 카테고리와 유사한 ui 형태로 변경되었다. ',
+    medias: [
+      {
+        src: cimemall_main,
+        type: 'video',
+        name: 'cimemall_main',
+      },
+    ],
   },
   {
     type: ['new', 'vue'],
@@ -31,6 +66,32 @@ export const allProject = [
     description: [
       '토큰 만료 7일 전 접속시 refresh token 발급을 axios interceptor에서 개발',
       '대여 , 대여 연장시에 날짜 유효성 체크 개발',
+      '이니시스 결제창을 back 단에서 열고 front 에서 form 과 iframe 을 통해 사용자단에 노출',
+      '푸시 , 파일 다운로드 앱 소스 연동',
+    ],
+    troubleShooting:
+      '<p><span>토큰 재발급</span><br/>로그인시 로그인 유지체크할 경우 30일 동안 유지되며 7일 이내 홈페이지 방문시 토큰 재발급을 해주는 프로세스이다. 근데 토큰 재발급시 무한 요청 문제가 생겼다.<br/>발급을 하는 와중에 api 통신을 하면서 또 interceptor 에서 시간 체크를 하고 또 재발급을 하는 과정이 반복 되었다.재발급을 시도할때 ‘refreshingToken’ 상태값을 true 바꿔주고 로컬스토리지에 저장했다.  재발급 함수에서  ‘refreshingToken’ true 일때는 return 시켜버리고 모든 과정이 끝나면  ‘refreshingToken’ false 로 다시 바꿔주었다.무한 발급 되면 홈페이지가 계속 돌아가는 바람에 식은땀이 나기도 했지만 위 과정을 통해 토큰이 정상 발급 되었고 안정화되었다.</p><br/><p><span>날짜 유효성 </span><br/>데이페이는 촬영 장비 대여 , 판매로 일반적인 쇼핑몰과 다른 형태를  띠고 있다.장바구니가 3가지였으며 3가지 모두 작지만 큰 차이점을 가지고 있다.영업점에 따른 기간 설정 , 대여 반납 사이에 3일 기간 디폴트 , 일반 판매 첫번째를 제외 하곤 나머지는 어렵지 않았다. 영업점에 따른 기간 설정이 제일 난관이었다. <br/>날짜를 기준으로 현재 시간보다 이전 시간도 안되고 영업점은 대여/반납 따로 설정이 가능하고 지점마다 영업시간도 상이했다. 또한 대여/반납사이의 날짜와 시간 또한 비교했어야했다. Dayjs 라이브러리를 이용하여 작업했는데 사파리 날짜 포맷에서는 또 dot 이 안됐다. <br/>State 날짜를 new Date() 로 전부 수정하고 날짜 유효성 체크는 공통 함수로 빼서 dayjs 플러그인을 통해 날짜 비교를 했다. 공통함수에서 유효성 객체를 생성하고 false 일때 알럿을 띄우도록 로직을 만들었다. 연장대여일때는 불필요한 유효성을 제거하기 위한 매개변수도 추가되었다. </p>',
+    medias: [
+      {
+        src: daypay_cart,
+        type: 'video',
+        name: 'daypay_cart',
+      },
+      {
+        src: daypay_date,
+        type: 'image',
+        name: 'daypay_date',
+      },
+      {
+        src: daypay_mo,
+        type: 'video',
+        name: 'daypay_mo',
+      },
+      {
+        src: daypay_prod,
+        type: 'video',
+        name: 'daypay_prod',
+      },
     ],
   },
   {

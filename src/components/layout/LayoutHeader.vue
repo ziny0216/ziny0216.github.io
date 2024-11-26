@@ -15,11 +15,11 @@
 <template>
   <header class="layout_header">
     <nav class="header_inner inner">
+      <h1 class="title">YOEJIN</h1>
       <ul class="header_navi">
         <li class="navi_item" @click="handleSection('about')">ABOUT ME</li>
         <li class="navi_item" @click="handleSection('career')">CAREER</li>
         <li class="navi_item" @click="handleSection('project')">PROJECT</li>
-        <li class="navi_item" @click="handleSection('contact')">CONTACT ME</li>
       </ul>
     </nav>
   </header>

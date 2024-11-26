@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
-
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=IBM+Plex+Sans+KR&display=swap');
 
 .color_blue {
   color: #2E9FFF
@@ -88,26 +87,26 @@
 
   &.red {
     color: #FA4718;
-    font: 400 12px/150% 'Noto Sans KR', sans-serif;
+    font: 400 12px/150% "Funnel Display", "IBM Plex Sans KR", sans-serif, sans-serif;
     padding-top: 12px;
 
   }
 
   &.gray {
     color: #777;
-    font: 400 14px/150% 'Noto Sans KR', sans-serif;
+    font: 400 14px/150% "Funnel Display", "IBM Plex Sans KR", sans-serif, sans-serif;
     padding-top: 8px;
 
   }
 
   &.blue {
     color: #3968DE;
-    font: 400 12px/150% 'Noto Sans KR', sans-serif;
+    font: 400 12px/150% "Funnel Display", "IBM Plex Sans KR", sans-serif, sans-serif;
   }
 }
 
 .text_small {
-  font: 400 12px/150% 'Noto Sans KR', sans-serif !important;
+  font: 400 12px/150% "Funnel Display", "IBM Plex Sans KR", sans-serif, sans-serif !important;
 }
 
 .fw-500 {
