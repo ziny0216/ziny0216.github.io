@@ -2,7 +2,7 @@
   import { usePopupStore } from '@/stores/usePopupStore.js';
 
   const usePopup = usePopupStore();
-  const emits = defineEmits(['close']);
+  const emits = defineEmits(['close', 'movePage']);
   const props = defineProps({
     isPopupOpen: {
       type: Boolean,
@@ -28,9 +28,18 @@
       type: Boolean,
       default: true,
     },
+    isMoveButton: {
+      type: Boolean,
+      default: false,
+    },
   });
   const close = () => {
     emits('close');
+  };
+  const movePage = () => {
+    if (props.isMoveButton) {
+      emits('movePage');
+    }
   };
 </script>
 
@@ -50,7 +59,14 @@
           <!-- modal body-->
           <div :style="`padding-block:${props.padding}`" class="modal_body">
             <div class="modal_inner">
-              <h6 v-if="props.title" class="modal_title">{{ props.title }}</h6>
+              <h6 v-if="props.title" class="modal_title" @click="movePage">
+                {{ props.title }}
+                <font-awesome-icon
+                  v-if="props.isMoveButton"
+                  :icon="['fas', 'arrow-up-right-from-square']"
+                  style="font-size: 12px"
+                />
+              </h6>
               <slot name="body"></slot>
             </div>
           </div>

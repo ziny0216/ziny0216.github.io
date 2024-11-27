@@ -13,13 +13,31 @@
     },
   });
   const usePopup = usePopupStore();
+
+  const getDeviceType = () => {
+    const userAgent = navigator.userAgent;
+    if (/iPhone|iPad|iPod/.test(userAgent) && /Safari/.test(userAgent)) {
+      return 'ios';
+    } else if (/Macintosh/.test(userAgent)) {
+      return 'ios';
+    } else if (/Android/.test(userAgent) && /Chrome/.test(userAgent)) {
+      return 'android';
+    } else {
+      return 'android';
+    }
+  };
+  const movePage = () => {
+    window.open(props.project.url[getDeviceType()]);
+  };
 </script>
 
 <template>
   <DefaultPopup
+    :is-move-button="!!props.project.url?.android || !!props.project.url?.ios"
     :is-popup-open="usePopup.popups.isProjectPopup"
     :title="props.project.name"
     @close="usePopup.setPopupState('isProjectPopup')"
+    @move-page="movePage"
   >
     <template #body>
       <div>
@@ -35,7 +53,7 @@
         </div>
       </div>
 
-      <div class="pj_desc">
+      <div v-if="props.project.description?.length > 0" class="pj_desc">
         <h5 class="title">주요내용</h5>
         <ul class="desc_list">
           <li
@@ -99,7 +117,7 @@
         </div>
       </div>
 
-      <div class="pj_desc">
+      <div v-if="props.project.troubleShooting" class="pj_desc">
         <h5 class="title">트러블 슈팅 및 회고</h5>
         <div class="desc_list" v-html="props.project.troubleShooting"></div>
       </div>

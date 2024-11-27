@@ -5,6 +5,8 @@ import daypay_cart from '@/assets/video/daypay_cart.mov';
 import daypay_mo from '@/assets/video/daypay_mo.mov';
 import daypay_prod from '@/assets/video/daypay_prod.mov';
 import daypay_date from '@/assets/video/daypay_date.png';
+import buddy_all from '@/assets/video/buddy_all.mov';
+import buddy_chat from '@/assets/video/buddy_chat.mov';
 
 export const allProject = [
   {
@@ -100,6 +102,11 @@ export const allProject = [
     date: '2024.02. ~ 2024.04.',
     stack: ['vue3', 'scss', 'pinia'],
     summary: '다이버 채팅 모임 커뮤니티 앱',
+    url: {
+      android:
+        'https://play.google.com/store/apps/details?id=com.divingbuddy.app&hl=ko',
+      ios: 'https://apps.apple.com/kr/app/diving-buddy/id6502801279',
+    },
     description: [
       '프로젝트 아키텍처 설계 및 구현',
       'modal, layout, input, select 등등 컴포넌트 개발',
@@ -108,6 +115,20 @@ export const allProject = [
       'jwt 토큰을 사용하였으며 토큰 만료시 갱신 없이 로그인 페이지로 이동되도록 구현',
       '웹뷰를 통해 보여지는 서비스로 vue 내에 앱 소스 연동',
     ],
+    troubleShooting:
+      '<p><span>회원가입 로딩 컴포넌트</span><br/>회원가입 마지막 단계에서 다이빙 버디와 샌드버드 두 서버에 데이터를 전달해야했다.다이빙버디 서버로 부터 200 성공이 떨어지면 샌드버드 회원가입을 실시하는데, interceptor 에서 로딩 컴포넌트를 제어하다보니 외부 api 호출시에는 로딩바가 노출되지 않았다. 이로 인해 사용자 입장자가 회원가입이 진행되는 동안  화면이 멈춘걸로 보여지는 문제가 발생했다.<br/> 샌드버드 api 가 실행 되는 시점에 로딩 상태값을 true 업데이트하고 api 호출이 완료되면 false로 바꿔주는 방법으로 문제를 해결했다.</p> <br/><br/><p><span> 딥링크 초대 </span><br/>샌드버드에서는 고유 channel_url 로 채팅방 진입 및 사용이 가능하며, 해당 채팅 멤버만이 고유 회원 번호로 초대를 할 수 있다.고객사에서 딥링크를 이용해 channel_url을 공유하여 초대하는 기능을 원했다.채팅 멤버가 딥링크를 공유 받는 사용자의 회원 번호를 알 수 없어 초대가 불가능하다.  샌드버드와 개발자 미팅을 통해 구버전 api 사용하면 해당멤버가 아니더라도  channel_url 만 있으면 초대가 가능하다는 답변을 받았다. 샌드버드측 답변에도 구현 어려움이 있는데 실제 딥링크를 공유 받은 회원인지 아닌지 구분이 어려웠다. 초대 토큰을 생성하여 검증을 통해 초대하는 방식과 딥링크 생성시 폼을 작성하여 초대하는 방식 두가지로 구현할 방안을 생각했으며 현재 일정 산정 및 기획 논의 단계에 있다.<p/>',
+    medias: [
+      {
+        src: buddy_all,
+        type: 'video',
+        name: 'buddy_all',
+      },
+      {
+        src: buddy_chat,
+        type: 'video',
+        name: 'buddy_chat',
+      },
+    ],
   },
   {
     type: ['pub'],
@@ -115,6 +136,10 @@ export const allProject = [
     date: '2024.02. ~ 2024.02.',
     stack: ['html/css', 'jQuery'],
     summary: '퍼스트몰 기반 온라인 쇼핑몰',
+    url: {
+      android: 'https://www.boneus.co.kr/',
+      ios: 'https://www.boneus.co.kr/',
+    },
     description: [
       '개발 없이 디자인만 수정하는 메인, 상품상세 , 게시판 일부 퍼블리싱 작업 수행',
     ],
@@ -134,6 +159,8 @@ export const allProject = [
       '구글 autocomplete API 이용하여 지도 검색 이후 좌표값으로 구글 지도에 마커 , 반경 노출 및 좌표 저장',
       '게시물 제목으로 gpt AI를 이용하여 결과값 노출',
     ],
+    troubleShooting:
+      '고객사에서는 사용자가 투표를 등록하면 동일한 지역에 있는 다른 사용자에게 실시간으로 투표 팝업이 열리기를 원했다. 이미 프로젝트 일정과 기능 범위가 초과된 상태였으며 소켓 실시간 통신은 프로젝트 비용 및 개발 기간이 부족했다. 또한 투표 게시물의 개수가 너무 많을 경우도 생각해야했다. <br/>개발팀과 고객사 논의 이후 실시간 투표 팝업 대신 푸시 알림으로 대체하기로 결정했다. 로그인시 좌표값, 푸시 알림 클릭시 위치 좌표 값을 체크하여 동일 지역 내 사용자에게 투표 팝업이 노출되도록 문제를 해결했다.',
   },
   {
     type: ['pub'],
@@ -142,11 +169,17 @@ export const allProject = [
     stack: ['html/css', 'bootstrap5', 'jQuery'],
     summary:
       '정민회계법인 사무소의 비즈니스 플랫폼 / 반응형 부트스트랩 사용하여 퍼블리싱 (SO,BO)',
+    url: {
+      android: 'https://www.jungmintax.com/login',
+      ios: 'https://www.jungmintax.com/login',
+    },
     description: [
       '부트스트랩 css 를 최대한 활용하는 쪽으로 하여 디자이너와 지속적인 소통을 통하여 개선 작업',
       '직원별 급여 관리는 테이블을 이용하였으며 일반적인 세로 테이블이 아닌 가로 테이블로 좌우 스크롤 가능하게 작업',
       '스크롤시 좌측 필드는 고정 요청사항으로 position sticky 를 이용 또한 pc 에서도 drag and drop 으로 좌우 이동 가능 하도록 작업',
     ],
+    troubleShooting:
+      '땡큐 마켓 장바구니 데이터는 입점사별 고유 key 값을 기준으로 입점사 정보와 상품 정보 배열 구성되어있었다.<br/>입점사별 고유번호를 기반으로 장바구니 ui를 분리하고 입점사별 금액도 따로 보여줘야했다. 또 상품 금액 계산 api 에서는 상품 번호,수량을 전달해야했고, 응답 데이터로 상품,입점사 가격 업데이트를 해줬어야했다.<br/>계산 로직을 공통함수로 분리하고 전체 상품 데이터와  입점사별 상품 데이터를 구분하여 매개변수로 넣었다. 응답값 변수에 담아서 리턴  , 리턴 받은 값에서 전체 상품과 입점사별 가격을 분리하여 상태값에 할당했다. <br/>장바구니에 입점사, 상품별 , 총 결제 금엑을 같이 관리해야해서 데이터 구조와 로직이 복잡했다. 그래도  공통 함수로 계산될 상품을 분리하여 리턴받으니 좀 더 수월해졌다. ',
   },
 
   {
@@ -155,6 +188,10 @@ export const allProject = [
     date: '2023.09. ~ 2023.10.',
     stack: ['html/css', 'jQuery'],
     summary: '반응형 미술 입시 전문 인강 / 쇼핑 / 커뮤니티 사이트',
+    url: {
+      android: 'https://artdata.kr/',
+      ios: 'https://artdata.kr/',
+    },
     description: [
       '퍼스트몰 기반 쇼핑몰을 고객사 요구사항에 맞게 개발 디자인 퍼블리싱 전면 수정',
     ],
@@ -165,6 +202,10 @@ export const allProject = [
     date: '2023.05. ~ 2023.06.',
     stack: ['html/css', 'jQuery'],
     summary: '반응형 코오롱 재단 사이트 퍼블리싱',
+    url: {
+      android: 'https://family.kolon.com/',
+      ios: 'https://family.kolon.com/',
+    },
     description: [
       '오운 컨텐츠 업로드 작업 및 css 수정',
       '어린이 문화재단 전체 퍼블리싱 (2023.5.8~ 2023.5.23)',
@@ -179,12 +220,18 @@ export const allProject = [
     date: '2023.03. ~ 2023.08.',
     stack: ['vue3', 'vuex', 'scss'],
     summary: '온라인 새상품/중고/리퍼 쇼핑몰 퍼블리싱 및 개발 참여',
+    url: {
+      android: 'https://thankq.market/',
+      ios: 'https://thankq.market/',
+    },
     description: [
       'vue 70% 퍼블리싱 (2023.03 ~ 2023.6)',
       '장바구니 옵션 및 수량 , 선택상품에 따른 calculator API 통신',
       '아이디, 비밀번호 찾기 정규식과 점유인증을 통해 3분 타이머 인증 개발',
       '개발 QA 담당',
     ],
+    troubleShooting:
+      '땡큐 마켓 장바구니 데이터는 입점사별 고유 key 값을 기준으로 입점사 정보와 상품 정보 배열 구성되어있었다.<br/>입점사별 고유번호를 기반으로 장바구니 ui를 분리하고 입점사별 금액도 따로 보여줘야했다. 또 상품 금액 계산 api 에서는 상품 번호,수량을 전달해야했고, 응답 데이터로 상품,입점사 가격 업데이트를 해줬어야했다.<br/>계산 로직을 공통함수로 분리하고 전체 상품 데이터와  입점사별 상품 데이터를 구분하여 매개변수로 넣었다. 응답값 변수에 담아서 리턴  , 리턴 받은 값에서 전체 상품과 입점사별 가격을 분리하여 상태값에 할당했다. <br/>장바구니에 입점사, 상품별 , 총 결제 금엑을 같이 관리해야해서 데이터 구조와 로직이 복잡했다. 그래도  공통 함수로 계산될 상품을 분리하여 리턴받으니 좀 더 수월해졌다. ',
   },
   {
     type: ['vue', 'pub'],
