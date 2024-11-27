@@ -5,6 +5,7 @@
   import 'swiper/css/navigation';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { Navigation } from 'swiper/modules';
+  import SkillBadge from '@/components/page/SkillBadge.vue';
 
   const props = defineProps({
     project: {
@@ -42,15 +43,7 @@
     <template #body>
       <div>
         <p class="pj_summary">{{ props.project.summary }}</p>
-        <div class="pj_skill">
-          <span
-            v-for="(item, idx) in props.project.stack"
-            :key="`stack-${idx}`"
-            class="skill_item"
-          >
-            {{ item }}
-          </span>
-        </div>
+        <SkillBadge :skills="props.project.stack" />
       </div>
 
       <div v-if="props.project.description?.length > 0" class="pj_desc">

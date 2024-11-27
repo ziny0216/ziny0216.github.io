@@ -5,6 +5,7 @@
   import { allProject } from '@/utiles/PortfolioData.js';
   import ProjectDetailPopup from '@/components/popup/ProjectDetailPopup.vue';
   import { usePopupStore } from '@/stores/usePopupStore.js';
+  import SkillBadge from '@/components/page/SkillBadge.vue';
 
   const usePopup = usePopupStore();
   const state = reactive({
@@ -38,22 +39,22 @@
   });
 </script>
 <template>
-  <section class="project_section" id="project">
+  <section id="project" class="project_section">
     <div class="inner">
       <DefaultSectionTitle title="PROJECT" />
       <div class="content_wrap">
         <div class="project_box">
           <DefaultTabList
             :active-value="state.activeTab"
-            class-name="round_tab"
             :tab-list="state.tabList"
+            class-name="round_tab"
             @handle-active="handleActiveTab"
           ></DefaultTabList>
           <ul class="project_list">
             <li
-              class="info_para project_item"
               v-for="(project, idx) in state.projectList"
               :key="idx"
+              class="info_para project_item"
               @click="handleDetailPopup(project)"
             >
               <div>
@@ -65,9 +66,10 @@
                 >
                 <p class="info_small">{{ project.date }}</p>
                 <div class="info_desc">
-                  <span class="ellipsis_clamp">
+                  <span class="ellipsis2">
                     {{ project.summary }}
                   </span>
+                  <SkillBadge :skills="project.stack" />
                 </div>
                 <span class="read_more_btn">READ MORE</span>
               </div>
@@ -81,6 +83,6 @@
   <ProjectDetailPopup :project="state.selectedProject" />
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
   @use '@/assets/scss/pages/main';
 </style>

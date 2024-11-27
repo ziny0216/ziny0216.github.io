@@ -2,22 +2,9 @@
 
 .pj_summary {
   font: $text-body14-400;
-  margin-bottom: 8px;
+
 }
 
-.pj_skill {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  .skill_item {
-    border-radius: 4px;
-    background: #1d3364;
-    color: $white;
-    padding: 0 4px;
-    font: $text-body12-500;
-  }
-}
 
 .pj_desc {
 

@@ -53,7 +53,9 @@
       <div class="modal_content">
         <div class="modal_wrap">
           <div class="modal_header">
-            <button class="close_btn" type="button" @click="close"></button>
+            <button class="close_btn" type="button" @click="close">
+              <font-awesome-icon :icon="['fas', 'xmark']" size="2x" />
+            </button>
           </div>
 
           <!-- modal body-->

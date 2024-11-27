@@ -2,14 +2,14 @@
   import DefaultSectionTitle from '@/components/common/DefaultSectionTitle.vue';
 </script>
 <template>
-  <section class="career_section" id="career">
+  <section id="career" class="career_section">
     <div class="inner">
       <DefaultSectionTitle title="CAREER" />
       <div class="content_wrap">
         <div class="info_box">
           <div class="info_para">
             <h5 class="info_title">주식회사 케이스랩</h5>
-            <p class="info_date">2022.03. ~ 재직 중 (2년 8개월)</p>
+            <p class="info_date">2022.03. ~ 2024.11 (2년 9개월)</p>
             <p class="info_desc">
               고객의 비즈니스에 맞춰 설계된 기획과 디자인에 맞춰 프로젝트
               프론트/퍼블리싱 및 고객서비스 운영,리뉴얼
@@ -55,6 +55,6 @@
   </section>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
   @use '@/assets/scss/pages/main';
 </style>
