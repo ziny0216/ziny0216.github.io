@@ -11,14 +11,14 @@
   backdrop-filter: blur(10px);
 
   .header_inner {
-    padding: 16px 0;
+    padding-block: 16px;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
 
     .title {
-      color: $gray-40;
-      font: 800 24px/150% "Funnel Display", "IBM Plex Sans KR", sans-serif;
+      color: $base;
+      font: 800 24px/150% "IBM Plex Sans KR", sans-serif;
     }
 
     .header_navi {
@@ -32,7 +32,7 @@
 
     .navi_item {
       color: $gray-40;
-      font: 800 24px/150% "Funnel Display", "IBM Plex Sans KR", sans-serif;
+      font: 800 24px/150% "IBM Plex Sans KR", sans-serif;
       transition: color 0.3s ease-in-out;
       position: relative;
       cursor: pointer;
@@ -44,13 +44,15 @@
         transform: translateX(-50%);
         bottom: 0;
         width: 0;
-        height: 2px;
-        background-color: $base;
+        height: 14px;
+        background-color: rgba(122, 149, 180, 0.3);
         z-index: 10;
         transition: all 0.3s;
+
       }
 
       &:hover, &.active {
+
         color: $base;
 
         &:before {

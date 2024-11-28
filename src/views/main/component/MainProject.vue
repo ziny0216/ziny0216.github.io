@@ -66,7 +66,7 @@
                 >
                 <p class="info_small">{{ project.date }}</p>
                 <div class="info_desc">
-                  <span class="ellipsis2">
+                  <span class="ellipsis2 summary">
                     {{ project.summary }}
                   </span>
                   <SkillBadge :skills="project.stack" />

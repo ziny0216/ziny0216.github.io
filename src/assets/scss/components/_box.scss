@@ -28,6 +28,7 @@
   height: calc(100vh - 91px);
 
   .inner {
+
     max-width: 550px;
     text-align: center;
 
@@ -98,6 +99,7 @@
 .section_title {
   font: $text-h5-500;
   margin-bottom: 16px;
+  text-align: center;
 
   &.sub_section {
     font: $text-p16-400;
@@ -149,7 +151,7 @@
 
 /*----------------------------- 반응형 ----------------------------*/
 
-@include tablet {
+@include xs-tablet {
   .special_phrase {
     font: $text-caption-400;
     line-height: 20px;
@@ -171,15 +173,9 @@
 
     }
   }
+
   .section_title {
-    font: $text-p18-500;
-    margin-bottom: 16px;
-
-    &.sub_section {
-      font: $text-p16-400;
-
-    }
-
+    align-self: center;
 
   }
 

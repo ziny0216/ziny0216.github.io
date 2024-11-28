@@ -5,17 +5,12 @@ body {
 }
 
 section {
-  height: 100vh;
-
+  min-height: 100vh;
 }
 
 
 .side_inner::-webkit-scrollbar, .modal_wrap::-webkit-scrollbar {
   display: none;
-}
-
-* {
-  font-family: 'Funnel Display', 'IBM Plex Sans KR', sans-serif !important;
 }
 
 
@@ -474,7 +469,7 @@ section {
 
 /*----------------------------- 반응형 ----------------------------*/
 // 1280px
-@include tablet {
+@include xs-tablet {
 
   .tablet_hide {
     display: none !important;

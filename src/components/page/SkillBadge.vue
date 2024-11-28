@@ -25,6 +25,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    flex-wrap: wrap;
 
     .skill_item {
       border-radius: 4px;

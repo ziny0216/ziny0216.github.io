@@ -2,23 +2,17 @@
 
 section {
   display: flex;
-  align-items: center;
 
   .inner {
+
+    padding-top: 90px;
+    min-height: 100vh;
+  }
+
+  .info_box {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 32px;
-  }
-
-  &:deep {
-    .section_title {
-      align-self: flex-start;
-    }
-  }
-
-  .content_wrap {
-    width: calc(100% - 200px);
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -26,7 +20,7 @@ section {
   color: $gray-100;
 
   .info_title {
-    font: $text-h5-700;
+    font: $text-p18-700;
   }
 
   .info_sub_tit {
@@ -36,6 +30,7 @@ section {
   .info_desc {
     font: $text-p16-500;
     padding-top: 16px;
+    
   }
 
   .info_small {
@@ -44,9 +39,15 @@ section {
   }
 }
 
+
 .about_section {
   .info_para {
+
     margin-top: 24px;
+
+    .info_title {
+      font: $text-h5-700;
+    }
   }
 
   .profile_img {
@@ -63,6 +64,14 @@ section {
       height: 100%;
     }
   }
+}
+
+.career_section {
+  .info_box {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+
 }
 
 .project_section {
@@ -99,10 +108,44 @@ section {
 }
 
 
-@include tablet {
+@include xs-tablet {
+  section {
+    .content_wrap {
+      width: 100%;
+    }
 
+    .inner {
+      flex-direction: column;
+      gap: 0;
+      justify-content: flex-start;
+    }
+  }
+  .info_para {
+    .info_title {
+      font-size: 18px;
+    }
+
+    .info_sub_tit {
+      font-size: 16px;
+    }
+
+    .info_desc {
+      font-size: 14px;
+    }
+  }
+  .project_section {
+    .project_list {
+      grid-template-columns: repeat(2, 1fr);
+
+    }
+  }
 }
 
-@include xs-tablet {
+@include mobile {
+  .project_section {
+    .project_list {
+      grid-template-columns: repeat(1, 1fr);
 
+    }
+  }
 }
