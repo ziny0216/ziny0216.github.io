@@ -72,6 +72,21 @@ section {
     max-width: 600px;
   }
 
+  .career_list {
+
+
+    padding-left: 10px;
+
+    li {
+      padding-left: 8px;
+
+      &::marker {
+
+        content: "\1F31F";
+        font-size: 10px;
+      }
+    }
+  }
 }
 
 .project_section {
@@ -115,7 +130,7 @@ section {
     }
 
     .inner {
-      padding-block: 90px 40px;
+      padding-block: 70px 40px;
       min-height: auto;
     }
   }

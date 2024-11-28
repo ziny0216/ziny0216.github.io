@@ -9,8 +9,8 @@
         <div class="info_box">
           <div class="info_para">
             <h5 class="info_title">주식회사 케이스랩</h5>
-            <p class="info_date">2022.03. ~ 2024.11 (2년 9개월)</p>
-            <ul>
+            <p class="info_small">2022.03. ~ 2024.11 (2년 9개월)</p>
+            <ul class="career_list">
               <li class="info_desc">
                 고객의 비즈니스에 맞춰 설계된 기획과 디자인에 맞춰 프로젝트
                 프론트/퍼블리싱 및 고객서비스 운영,리뉴얼
