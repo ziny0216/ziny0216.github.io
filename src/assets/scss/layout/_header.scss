@@ -30,6 +30,22 @@
 
     }
 
+    /* 기본적으로 PC 환경에서만 :hover 활성화 */
+    @media (hover: hover) and (pointer: fine) {
+      .navi_item {
+        &:hover {
+
+          color: $base;
+
+          &:before {
+            width: 100%;
+          }
+        }
+      }
+
+    }
+
+
     .navi_item {
       color: $gray-40;
       font: 800 24px/150% "IBM Plex Sans KR", sans-serif;
@@ -51,7 +67,7 @@
 
       }
 
-      &:hover, &.active {
+      &.active {
 
         color: $base;
 
@@ -90,22 +106,25 @@
 }
 
 
-@include pc {
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-  }
-}
-
-@include tablet {
+@include mobile {
   .layout_header {
+    transition: all 0.5s ease;
+
     .header_inner {
+      flex-wrap: wrap;
+
+      .header_navi {
+        width: 100%;
+        justify-content: space-between;
+        padding-top: 16px;
+        gap: 8px;
+      }
+
+      .navi_item {
+        font-size: 18px;
 
 
+      }
     }
 
 
