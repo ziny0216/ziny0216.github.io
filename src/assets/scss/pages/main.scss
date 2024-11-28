@@ -30,7 +30,7 @@ section {
   .info_desc {
     font: $text-p16-500;
     padding-top: 16px;
-    
+
   }
 
   .info_small {
@@ -115,9 +115,15 @@ section {
     }
 
     .inner {
-      flex-direction: column;
-      gap: 0;
-      justify-content: flex-start;
+      padding-block: 90px 40px;
+      min-height: auto;
+    }
+  }
+  .about_section {
+    .info_para {
+      .info_title {
+        font-size: 18px;
+      }
     }
   }
   .info_para {
@@ -139,6 +145,7 @@ section {
 
     }
   }
+
 }
 
 @include mobile {

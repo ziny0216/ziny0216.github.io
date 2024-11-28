@@ -422,6 +422,7 @@ button {
   row-gap: 8px;
   margin-bottom: 24px;
 
+
   &.lg {
     .tab_item {
       button {
@@ -492,4 +493,16 @@ button {
 
 .close_btn {
   color: $blue-90
+}
+
+@include xs-tablet {
+  .round_tab {
+    .tab_item {
+      button {
+        padding: 4px 12px;
+        min-width: auto;
+        font-size: 12px;
+      }
+    }
+  }
 }
