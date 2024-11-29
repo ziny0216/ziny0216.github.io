@@ -75,15 +75,16 @@ section {
   .career_list {
 
 
-    padding-left: 10px;
-
     li {
-      padding-left: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 4px;
 
-      &::marker {
-
+      &::before {
         content: "\1F31F";
-        font-size: 10px;
+        display: block;
+        font-size: 12px;
+
       }
     }
   }
