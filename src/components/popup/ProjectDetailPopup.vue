@@ -88,6 +88,8 @@
                 :src="media.src"
                 autoplay
                 loop
+                muted
+                playsinline
               ></video>
               <img v-else :src="media.src" alt="" />
             </swiper-slide>
