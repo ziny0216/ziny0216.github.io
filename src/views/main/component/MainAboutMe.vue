@@ -30,12 +30,12 @@
               그 과정들이 지금의 저를 만들어 준 중요한 밑거름이되었다고
               믿습니다.
             </p>
-            <p class="info_desc">
-              <a class="text_none" href="mailto:rkfwoa02@gmail.com">
-                <font-awesome-icon :icon="['far', 'envelope']" />
-                rkfwoa02@gmail.com
-              </a>
-            </p>
+            <!--            <p class="info_desc">-->
+            <!--              <a class="text_none" href="mailto:rkfwoa02@gmail.com">-->
+            <!--                <font-awesome-icon :icon="['far', 'envelope']" />-->
+            <!--                rkfwoa02@gmail.com-->
+            <!--              </a>-->
+            <!--            </p>-->
           </div>
         </div>
       </div>
