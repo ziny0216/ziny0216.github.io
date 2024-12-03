@@ -42,6 +42,10 @@ yarn add eslint --dev
 yarn add prettier --dev
 ```
 
+### 배포
+
+- **GitHub Actions**를 사용하여 GitHub Pages에 자동 배포
+
 ## 컴포넌트 명명 규칙(주의)
 
 - [참고] https://ko.vuejs.org/style-guide/
