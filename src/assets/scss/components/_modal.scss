@@ -255,17 +255,8 @@
     transform: initial;
   }
   .default_popup {
-    top: 0;
-    left: 0;
-    transform: initial;
+    max-height: 100%;
 
-    .modal_content {
-      z-index: 10000;
-      max-width: 100%;
-      height: 100%;
-      width: 100%;
-      min-width: auto;
-    }
 
     .modal_wrap {
       max-height: 100%;
