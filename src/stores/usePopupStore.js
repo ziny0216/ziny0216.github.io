@@ -30,7 +30,6 @@ export const usePopupStore = defineStore('usePopup', {
   },
   getters: {
     isAnyPopupOpen(state) {
-      console.log(state.popups);
       return Object.values(state.popups).some(popupState => popupState);
     },
   },

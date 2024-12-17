@@ -1,7 +1,7 @@
 <script setup>
   import DefaultSectionTitle from '@/components/common/DefaultSectionTitle.vue';
   import DefaultTabList from '@/components/common/DefaultTabList.vue';
-  import { onMounted, reactive } from 'vue';
+  import { onMounted, reactive, watch } from 'vue';
   import { allProject } from '@/utiles/PortfolioData.js';
   import ProjectDetailPopup from '@/components/popup/ProjectDetailPopup.vue';
   import { usePopupStore } from '@/stores/usePopupStore.js';
@@ -34,6 +34,7 @@
     state.selectedProject = project;
     usePopup.setPopupState('isProjectPopup');
   };
+
   onMounted(() => {
     filterProjectList();
   });

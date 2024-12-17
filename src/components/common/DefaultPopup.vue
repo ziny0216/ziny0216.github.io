@@ -44,12 +44,12 @@
 </script>
 
 <template>
+  <div v-if="props.isPopupOpen" class="dimmed" @click="close"></div>
   <transition :duration="500" name="fade">
     <div
       v-if="props.isPopupOpen"
       :class="['default_popup', props.size, className]"
     >
-      <div class="dimmed tablet_hide" @click="close"></div>
       <div class="modal_content">
         <div class="modal_wrap">
           <div class="modal_header">
