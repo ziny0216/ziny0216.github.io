@@ -16,14 +16,15 @@
                 프론트/퍼블리싱 및 고객서비스 운영,리뉴얼
               </li>
               <li class="info_desc">
-                입사 후 주 업무 퍼블리싱, vue 서브 개발자로 참여
+                환경 세팅부터 서비스 운영까지 전반적인 프론트엔드 업무 수행 및
+                프로젝트 진행
               </li>
-              <li class="info_desc">
-                2023.12 이후 1인 프론트엔드로 환경 세팅부터 서비스 운영까지
-                전반적인 프론트엔드 업무 수행 및 프로젝트 진행
-              </li>
+
               <li class="info_desc">
                 프로젝트 아키텍처 구성하여 새로운 프로젝트 시작시 시간 비용 감소
+              </li>
+              <li class="info_desc">
+                vite 번들러 설정 및 eslint , prettier 세팅
               </li>
               <li class="info_desc">
                 SCSS 로 매 프로젝트 사용될 common.scss , mixin 생성

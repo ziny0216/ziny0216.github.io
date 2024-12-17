@@ -28,14 +28,11 @@
               아키텍처 설계, 공통 함수 생성까지 하나하나 기반을 다져왔습니다.<br />
               어제의 고민이 오늘의 저를 성장하게 했고,<br />
               그 과정들이 지금의 저를 만들어 준 중요한 밑거름이되었다고
-              믿습니다.
+              믿습니다.<br />
+              <br />
+              Vue를 주로 사용하여 개발하였고 React 개발에 참여한 경험이
+              있습니다. 현재 Next.js , TypeScript 공부 중에 있습니다.
             </p>
-            <!--            <p class="info_desc">-->
-            <!--              <a class="text_none" href="mailto:rkfwoa02@gmail.com">-->
-            <!--                <font-awesome-icon :icon="['far', 'envelope']" />-->
-            <!--                rkfwoa02@gmail.com-->
-            <!--              </a>-->
-            <!--            </p>-->
           </div>
         </div>
       </div>
